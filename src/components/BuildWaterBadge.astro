@@ -4,13 +4,25 @@ import buildLog from '../../data/build-water-log.json';
 const totalWaterMl = buildLog.total_water_ml as number;
 const coffeeWaterMl = (buildLog.comparisons as Record<string, number>).cup_of_coffee_ml ?? 140_000;
 const show = totalWaterMl > 0;
-const coffeeFraction = show ? Math.floor(coffeeWaterMl / totalWaterMl) : 0;
+
+// Pick the right comparison based on scale
+const coffeeFraction = coffeeWaterMl / totalWaterMl;
+let comparison: string;
+if (coffeeFraction >= 10) {
+  comparison = `less than 1/${Math.floor(coffeeFraction)}th of a cup of coffee`;
+} else if (coffeeFraction >= 2) {
+  comparison = `about ${Math.round(1 / coffeeFraction * 100)}% of a cup of coffee`;
+} else {
+  // Close to or more than a cup — use liters and a different comparison
+  const liters = (totalWaterMl / 1000).toFixed(1);
+  comparison = `roughly the water footprint of one cup of coffee`;
+}
 ---
 
 {show && (
   <p class="text-xs text-text-faint italic">
-    Building this site used approximately {Math.round(totalWaterMl)} ml of water —
-    less than 1/{coffeeFraction}th of
-    <a href="/methodology#build-water" class="underline hover:text-text-muted">a cup of coffee</a>.
+    Researching and building this site used approximately {(totalWaterMl / 1000).toFixed(1)} liters of water —
+    {' '}{comparison}.
+    <a href="/methodology#build-water" class="underline hover:text-text-muted">How we calculated this.</a>
   </p>
 )}

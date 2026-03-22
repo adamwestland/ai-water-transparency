@@ -102,7 +102,7 @@ The following primary sources are cited in the dataset and this methodology:
 
 ## How Much Water Did Building This Site Use?
 
-We built this site using Claude Code with Anthropic's Claude Opus 4.6 model. We tracked the tokens used during the build and estimated the water footprint using the same formula used in the [WaterLens](https://github.com/adamwestland/waterlens) browser extension:
+We built this site using Claude Code with Anthropic's Claude Opus 4.6 model. We tracked the tokens used during the build and estimated the water footprint using published research on data center water consumption (Li et al., 2023; Macknick et al., 2012):
 
 ```
 water_ml = energy_kWh x PUE x (WUE + WI_grid) x 1000
