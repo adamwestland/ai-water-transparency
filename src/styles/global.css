@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+
+@theme {
+  --color-bg-warm: #f8f7f4;
+  --color-bg-card: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-text-faint: #999999;
+  --color-border-subtle: #e5e5e0;
+  --color-border-card: #e5e5e0;
+
+  --color-badge-yes-bg: #e8f5e9;
+  --color-badge-yes-text: #2e7d32;
+  --color-badge-no-bg: #fce8e6;
+  --color-badge-no-text: #c62828;
+  --color-badge-partial-bg: #fff3e0;
+  --color-badge-partial-text: #e65100;
+
+  --font-heading: "Sora", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+}
+
+/* Logo gradient — the waterlens wordmark */
+.logo-gradient {
+  background: linear-gradient(135deg, #2d6a9f, #4a9ead, #7bc47f, #e8c547, #e8845f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
