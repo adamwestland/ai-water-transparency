@@ -4,23 +4,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="About — AI Water Transparency Report" description="Why we built the AI Water Transparency Report and who maintains it.">
   <article class="prose prose-neutral max-w-prose mx-auto">
-    <h1>About</h1>
+    <h1>Why this exists</h1>
 
     <p>
-      AI systems consume water. Data centers use it for cooling. Power plants use it to generate
-      the electricity those data centers need. As AI usage grows, so does the water footprint.
+      I work in AI. Water comes up constantly — in community hearings, sustainability reports,
+      academic papers, news stories. When I started digging into what AI companies actually
+      disclose about water usage, I found two things.
     </p>
 
     <p>
-      We looked for a simple, sourced comparison of what major AI providers actually disclose
-      about their water consumption. It didn't exist. So we started one.
+      First, the information is scattered and hard to verify. Some providers publish detailed
+      sustainability reports. Others publish nothing. Finding out which is which means reading
+      hundreds of pages of corporate reports, and even then the picture is incomplete. Meanwhile,
+      headlines swing between "AI will drain our aquifers" and "it's fine, don't worry" —
+      neither of which is grounded in what's actually published.
+    </p>
+
+    <p>
+      Second, no one had assembled the disclosure data into a single, maintained, citable
+      reference. Carbon tracking has tools, dashboards, and standards. Water transparency
+      has scattered sustainability reports and paywalled research.
+    </p>
+
+    <p>
+      AI can be a net benefit to the world. But that case is stronger when the industry is open
+      about its resource consumption. Transparency isn't an attack — it's the foundation for trust.
+      And right now, the gap between what providers know and what they publish is wide.
+    </p>
+
+    <p>
+      This project addresses that gap. Not by calculating water usage, not by assigning scores,
+      but by documenting what each provider actually discloses — with a source link for every claim.
     </p>
 
     <h2>What this is</h2>
     <p>
       A public record of environmental transparency across the AI industry. Not a score. Not a
       ranking. Just a factual accounting of what each provider chooses to publish — and what they
-      don't.
+      don't. The dataset is open source, schema-validated, and licensed under
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> so researchers,
+      journalists, and developers can use it freely.
     </p>
 
     <h2>What this is not</h2>
@@ -32,12 +55,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <h2>How it's built</h2>
     <p>
-      This site is built with Astro, ships zero JavaScript, and is entirely open source.
-      The data is maintained as a JSON file and validated against a schema.
-      Every build produces static HTML — no servers, no tracking, no cookies.
+      This site was built with <a href="https://github.com/adamwestland/ai-water-transparency">open source code</a>,
+      ships zero JavaScript, and produces static HTML — no servers, no tracking, no cookies.
+      The data is maintained as a JSON file validated against a schema on every change.
     </p>
     <p>
-      This site was built with Claude Code. We disclose this because transparency is the point.
+      It was built using Claude Code (Anthropic's Opus 4.6 model). We disclose this for the same
+      reason we expect AI providers to disclose their water usage: transparency is the point.
+      Full details in our <a href="https://github.com/adamwestland/ai-water-transparency/blob/main/TRANSPARENCY.md">transparency disclosure</a>.
+    </p>
+
+    <h2>This is a starting point</h2>
+    <p>
+      Every claim is sourced from published sustainability reports, peer-reviewed research, and
+      official disclosures. But this is the beginning of something we believe should exist — and
+      it's better built in the open where others can verify, improve, and expand it.
+    </p>
+    <p>
+      If you spot an error, <a href="https://github.com/adamwestland/ai-water-transparency/issues">open an issue</a>.
+      If a provider has published data we missed, <a href="https://github.com/adamwestland/ai-water-transparency/pulls">submit a PR</a>.
+      If you're a researcher with better sources, we want to hear from you.
     </p>
   </article>
 </BaseLayout>

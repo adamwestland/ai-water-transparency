@@ -144,7 +144,7 @@
       "energy_usage": {
         "status": "no",
         "detail": "No energy consumption data published. Relies on AWS and Google Cloud infrastructure.",
-        "source_url": null
+        "source_url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
       },
       "per_facility_reporting": {
         "status": "no",
@@ -176,8 +176,8 @@
       },
       "energy_usage": {
         "status": "no",
-        "detail": "No energy consumption data published. Relies on third-party cloud infrastructure.",
-        "source_url": null
+        "detail": "No energy consumption data published. Relies on third-party cloud infrastructure (AWS, Azure, CoreWeave).",
+        "source_url": "https://aws.amazon.com/solutions/case-studies/perplexity-bedrock-case-study/"
       },
       "per_facility_reporting": {
         "status": "no",
@@ -215,7 +215,7 @@
       "per_facility_reporting": {
         "status": "no",
         "detail": "Does not operate its own data centers (runs on Microsoft Azure). No facility-level data published. Stargate project campuses are under construction.",
-        "source_url": null
+        "source_url": "https://openai.com/index/five-new-stargate-sites/"
       },
       "ai_specific_data": {
         "status": "partial",
@@ -238,17 +238,17 @@
       "water_usage": {
         "status": "no",
         "detail": "No water usage data published. Memphis Colossus facility draws ~1.3M gallons/day from the aquifer per reporting by environmental groups, but xAI has not disclosed figures itself.",
-        "source_url": null
+        "source_url": "https://www.protectouraquifer.org/issues/xai-supercomputer"
       },
       "energy_usage": {
         "status": "no",
         "detail": "No energy consumption data published. Operates its own data centers with gas turbines and battery storage, but has not disclosed total energy usage.",
-        "source_url": null
+        "source_url": "https://www.datacenterdynamics.com/en/news/elon-musk-xai-gas-turbines-memphis/"
       },
       "per_facility_reporting": {
         "status": "no",
         "detail": "Operates the Colossus facility in Memphis, TN, but publishes no environmental data for it. Environmental impact information comes from third-party investigations and permit filings.",
-        "source_url": null
+        "source_url": "https://www.protectouraquifer.org/issues/xai-supercomputer"
       },
       "ai_specific_data": {
         "status": "no",
@@ -281,7 +281,7 @@
       "per_facility_reporting": {
         "status": "no",
         "detail": "Operates a 40 MW facility in Essonne, France and is building data centers in Sweden, but does not publish per-facility environmental breakdowns.",
-        "source_url": null
+        "source_url": "https://www.businesswire.com/news/home/20250303970989/en/Fluidstack-Delivering-Europes-Largest-AI-Supercomputer-to-Mistral-AI-in-2025"
       },
       "ai_specific_data": {
         "status": "yes",
@@ -309,7 +309,7 @@
       "energy_usage": {
         "status": "no",
         "detail": "No energy consumption data published. Published a policy primer on AI energy efficiency but disclosed no data about its own operations. Relies on third-party cloud infrastructure.",
-        "source_url": null
+        "source_url": "https://cohere.com/research/papers/efficient-ai.pdf"
       },
       "per_facility_reporting": {
         "status": "no",

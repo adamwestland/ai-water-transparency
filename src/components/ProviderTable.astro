@@ -39,15 +39,20 @@ const { providers } = Astro.props;
                   </summary>
                   <div class="mt-2 text-xs text-text-muted leading-relaxed max-w-48">
                     <p>{disclosure.detail}</p>
-                    {disclosure.source_url && (
+                    {disclosure.source_url ? (
                       <a
                         href={disclosure.source_url}
-                        class="text-text-faint underline hover:text-text-muted mt-1 inline-block"
+                        class="underline hover:text-text-primary mt-1 inline-block"
+                        style="color: #2d6a9f;"
                         target="_blank"
                         rel="noopener"
                       >
-                        Source
+                        View source &rarr;
                       </a>
+                    ) : (
+                      <p class="text-text-faint mt-1">
+                        Checked {provider.last_updated}
+                      </p>
                     )}
                   </div>
                 </details>

@@ -38,15 +38,20 @@ const { provider } = Astro.props;
           </summary>
           <div class="pb-3 text-sm text-text-muted leading-relaxed">
             <p>{disclosure.detail}</p>
-            {disclosure.source_url && (
+            {disclosure.source_url ? (
               <a
                 href={disclosure.source_url}
-                class="text-xs text-text-faint underline hover:text-text-muted mt-1 inline-block"
+                class="text-xs underline hover:text-text-primary mt-1 inline-block"
+                style="color: #2d6a9f;"
                 target="_blank"
                 rel="noopener"
               >
-                Source
+                View source &rarr;
               </a>
+            ) : (
+              <p class="text-xs text-text-faint mt-1">
+                Checked {provider.last_updated} — no public disclosure found
+              </p>
             )}
           </div>
         </details>

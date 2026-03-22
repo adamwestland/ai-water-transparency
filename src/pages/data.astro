@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { providers } from '../lib/providers';
+import type { DisclosureDimension } from '../lib/providers';
+import { DISCLOSURE_LABELS, DISCLOSURE_ORDER } from '../lib/disclosure-labels';
+
+const jsonString = JSON.stringify(providers, null, 2);
+const lastUpdated = providers.map((p) => p.last_updated).sort().reverse()[0];
+
+const statusColor = (status: string) => {
+  if (status === 'yes') return 'text-badge-yes-text';
+  if (status === 'no') return 'text-badge-no-text';
+  return 'text-badge-partial-text';
+};
+---
+
+<BaseLayout title="Data — AI Water Transparency Report" description="Full dataset of AI provider water transparency disclosures. Open data, CC BY 4.0.">
+  <div class="max-w-prose mx-auto">
+    <h1 class="font-heading font-semibold text-2xl mb-2">Data</h1>
+    <p class="text-sm text-text-muted mb-6">
+      {providers.length} providers &middot; Last updated {lastUpdated} &middot;
+      Licensed <a href="https://creativecommons.org/licenses/by/4.0/" class="underline hover:text-text-primary" target="_blank" rel="noopener">CC BY 4.0</a>
+    </p>
+
+    <div class="flex gap-3 mb-8">
+      <a
+        href="/data/providers.json"
+        download="providers.json"
+        class="text-sm px-3 py-1.5 border border-border-subtle rounded hover:bg-bg-card no-underline text-text-primary"
+      >
+        Download JSON
+      </a>
+      <a
+        href="https://github.com/adamwestland/ai-water-transparency/blob/main/data/providers.json"
+        class="text-sm px-3 py-1.5 border border-border-subtle rounded hover:bg-bg-card no-underline text-text-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        View on GitHub
+      </a>
+    </div>
+
+    {providers.map((provider) => (
+      <section class="mb-8 pb-8 border-b border-border-subtle last:border-b-0">
+        <h2 class="font-body font-semibold text-lg">{provider.name}</h2>
+        <p class="text-xs text-text-faint mt-0.5 mb-3">
+          ID: <code class="bg-bg-card px-1 rounded">{provider.id}</code> &middot;
+          Updated {provider.last_updated}
+          {provider.sustainability_report_url && (
+            <span>
+              &middot; <a href={provider.sustainability_report_url} class="underline hover:text-text-primary" target="_blank" rel="noopener">Sustainability report</a>
+            </span>
+          )}
+        </p>
+
+        <dl class="space-y-2">
+          {DISCLOSURE_ORDER.map((key: DisclosureDimension) => {
+            const d = provider.disclosures[key];
+            if (!d) return null;
+            return (
+              <div class="grid grid-cols-[1fr_auto] gap-2 items-start text-sm">
+                <div>
+                  <dt class="font-medium text-text-primary inline">{DISCLOSURE_LABELS[key]}:</dt>
+                  {' '}
+                  <dd class="inline text-text-muted">{d.detail}</dd>
+                  {d.source_url && (
+                    <a
+                      href={d.source_url}
+                      class="text-xs ml-1 underline hover:text-text-primary"
+                      style="color: #2d6a9f;"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      source
+                    </a>
+                  )}
+                </div>
+                <span class={`text-xs font-medium uppercase ${statusColor(d.status)}`}>
+                  {d.status}
+                </span>
+              </div>
+            );
+          })}
+        </dl>
+      </section>
+    ))}
+
+    <div class="mt-8 pt-8 border-t border-border-subtle">
+      <h2 class="font-body font-semibold text-lg mb-2">Raw JSON</h2>
+      <pre class="text-xs bg-bg-card border border-border-subtle rounded p-4 overflow-x-auto max-h-96"><code>{jsonString}</code></pre>
+    </div>
+  </div>
+</BaseLayout>
