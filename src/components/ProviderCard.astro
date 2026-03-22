@@ -1,0 +1,58 @@
+---
+import DisclosureBadge from './DisclosureBadge.astro';
+import { DISCLOSURE_LABELS, DISCLOSURE_ORDER } from '../lib/disclosure-labels';
+import type { Provider } from '../lib/providers';
+
+interface Props {
+  provider: Provider;
+}
+
+const { provider } = Astro.props;
+---
+
+<article class="bg-bg-card border border-border-card rounded px-5 py-4">
+  <h2 class="font-body font-semibold text-lg text-text-primary">{provider.name}</h2>
+
+  {provider.sustainability_report_url ? (
+    <a
+      href={provider.sustainability_report_url}
+      class="text-sm text-text-muted underline hover:text-text-primary"
+      target="_blank"
+      rel="noopener"
+    >
+      Sustainability report
+    </a>
+  ) : (
+    <p class="text-sm text-text-faint">No report published</p>
+  )}
+
+  <div class="mt-4 space-y-0">
+    {DISCLOSURE_ORDER.map((key) => {
+      const disclosure = provider.disclosures[key];
+      if (!disclosure) return null;
+      return (
+        <details class="border-t border-border-subtle">
+          <summary class="flex items-center justify-between py-2.5 cursor-pointer text-sm font-body text-text-primary">
+            <span>{DISCLOSURE_LABELS[key]}</span>
+            <DisclosureBadge status={disclosure.status} />
+          </summary>
+          <div class="pb-3 text-sm text-text-muted leading-relaxed">
+            <p>{disclosure.detail}</p>
+            {disclosure.source_url && (
+              <a
+                href={disclosure.source_url}
+                class="text-xs text-text-faint underline hover:text-text-muted mt-1 inline-block"
+                target="_blank"
+                rel="noopener"
+              >
+                Source
+              </a>
+            )}
+          </div>
+        </details>
+      );
+    })}
+  </div>
+
+  <p class="text-xs text-text-faint mt-3">Updated {provider.last_updated}</p>
+</article>

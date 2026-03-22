@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Water Transparency Provider Dataset",
+  "description": "Schema for provider water/energy disclosure tracking data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "sustainability_report_url", "disclosures", "last_updated"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "description": "Unique provider identifier (lowercase kebab-case)"
+      },
+      "name": {
+        "type": "string",
+        "description": "Display name for the provider"
+      },
+      "sustainability_report_url": {
+        "oneOf": [
+          { "type": "string", "pattern": "^https?://" },
+          { "type": "null" }
+        ],
+        "description": "URL to the provider's sustainability report, or null if none exists"
+      },
+      "disclosures": {
+        "type": "object",
+        "required": [
+          "water_usage",
+          "energy_usage",
+          "per_facility_reporting",
+          "ai_specific_data",
+          "water_pledge"
+        ],
+        "properties": {
+          "water_usage": { "$ref": "#/definitions/disclosure_item" },
+          "energy_usage": { "$ref": "#/definitions/disclosure_item" },
+          "per_facility_reporting": { "$ref": "#/definitions/disclosure_item" },
+          "ai_specific_data": { "$ref": "#/definitions/disclosure_item" },
+          "water_pledge": { "$ref": "#/definitions/disclosure_item" }
+        },
+        "additionalProperties": false
+      },
+      "last_updated": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "ISO date when this provider entry was last reviewed"
+      }
+    },
+    "additionalProperties": false
+  },
+  "definitions": {
+    "disclosure_item": {
+      "type": "object",
+      "required": ["status", "detail", "source_url"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["yes", "no", "partial"],
+          "description": "Whether the provider discloses this information"
+        },
+        "detail": {
+          "type": "string",
+          "description": "Factual description of what is or isn't disclosed"
+        },
+        "source_url": {
+          "oneOf": [
+            { "type": "string", "pattern": "^https?://" },
+            { "type": "null" }
+          ],
+          "description": "URL to the source document, required when status is yes or partial"
+        }
+      },
+      "additionalProperties": false,
+      "if": {
+        "properties": {
+          "status": { "enum": ["yes", "partial"] }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_url": {
+            "type": "string",
+            "pattern": "^https?://"
+          }
+        }
+      }
+    }
+  }
+}

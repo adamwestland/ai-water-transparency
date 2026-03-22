@@ -1,0 +1,200 @@
+[
+  {
+    "id": "google",
+    "name": "Google (Gemini)",
+    "sustainability_report_url": "https://sustainability.google/reports/google-2024-environmental-report/",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water consumption annually (8.1B gallons in 2024, up 88% since 2019). Reports fleet-wide WUE (~1.1 L/kWh).",
+        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption and fleet-wide PUE (~1.10). Publishes carbon-free energy percentage.",
+        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+      },
+      "per_facility_reporting": {
+        "status": "partial",
+        "detail": "Some facility-level data available (e.g., Council Bluffs 1B gallons in 2024), but not systematically published for all sites.",
+        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+      },
+      "ai_specific_data": {
+        "status": "yes",
+        "detail": "Published per-query water estimate for Gemini (0.26 ml) via Google Cloud Blog (2025).",
+        "source_url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/"
+      },
+      "water_pledge": {
+        "status": "yes",
+        "detail": "Pledged to replenish 120% of water consumed by 2030. Replenished ~4.5B gallons (~64%) in 2024.",
+        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft (OpenAI)",
+    "sustainability_report_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water consumption annually (6.4M cubic meters in 2022, 34% YoY increase). Explicitly attributed increase to AI infrastructure.",
+        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption. Does not consistently report average PUE across fleet.",
+        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Does not publish per-facility water or energy breakdowns.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data specific to AI workloads or OpenAI models.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "yes",
+        "detail": "Pledged to be water positive by 2030 — replenish more water than consumed globally.",
+        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon (AWS)",
+    "sustainability_report_url": "https://sustainability.aboutamazon.com/",
+    "disclosures": {
+      "water_usage": {
+        "status": "partial",
+        "detail": "Reports water use but with less granularity than peers. Official total figures are less clear than Google or Microsoft.",
+        "source_url": "https://sustainability.aboutamazon.com/"
+      },
+      "energy_usage": {
+        "status": "partial",
+        "detail": "Reports renewable energy progress (100% renewable by 2025 goal). Only market-based emissions reported, not location-based. Does not report PUE.",
+        "source_url": "https://sustainability.aboutamazon.com/"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Does not publish per-facility water or energy data.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data specific to AI/ML workloads.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "yes",
+        "detail": "Pledged to be water positive by 2030. Some AWS regions use zero-water cooling (e.g., Ireland, Sweden).",
+        "source_url": "https://sustainability.aboutamazon.com/"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "meta",
+    "name": "Meta (LLaMA)",
+    "sustainability_report_url": "https://sustainability.fb.com/",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water consumption (813M gallons in 2023, 95% from data centers). Reports WUE (~0.26 L/kWh), among the lowest in industry.",
+        "source_url": "https://sustainability.fb.com/"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption and renewable energy progress.",
+        "source_url": "https://sustainability.fb.com/"
+      },
+      "per_facility_reporting": {
+        "status": "yes",
+        "detail": "Some facility-level detail published (e.g., Prineville, OR uses zero water for cooling).",
+        "source_url": "https://sustainability.fb.com/"
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data specific to AI workloads (LLaMA training, Reels inference, etc.).",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "yes",
+        "detail": "Committed to net-zero emissions across value chain by 2030; water stewardship investments ongoing.",
+        "source_url": "https://sustainability.fb.com/"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic (Claude)",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "no",
+        "detail": "No energy consumption data published. Relies on AWS and Google Cloud infrastructure.",
+        "source_url": null
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Not applicable — Anthropic does not operate its own data centers.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No per-model or per-query energy or water data published.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water-related sustainability commitments published.",
+        "source_url": null
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "no",
+        "detail": "No energy consumption data published. Relies on third-party cloud infrastructure.",
+        "source_url": null
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Not applicable — Perplexity does not operate its own data centers.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No per-query energy or water data published.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water-related sustainability commitments published.",
+        "source_url": null
+      }
+    },
+    "last_updated": "2026-03-22"
+  }
+]

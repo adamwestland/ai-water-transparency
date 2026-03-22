@@ -1,0 +1,136 @@
+---
+title: Methodology
+description: How the AI Water Transparency Report tracks and verifies provider disclosures.
+---
+
+## What We Track
+
+We track five dimensions of public disclosure for each AI provider. These are the questions we ask of every company that runs or relies on data center infrastructure to serve AI models:
+
+1. **Water Usage** -- Does the provider publish total water consumption figures? This includes annual totals, water use effectiveness (WUE) metrics, and trends over time. Example: Google reports consuming 8.1 billion gallons in 2024 and publishes a fleet-wide WUE of ~1.1 L/kWh ([Google 2024 Environmental Report](https://sustainability.google/reports/google-2024-environmental-report/)).
+
+2. **Energy Usage** -- Does the provider publish total energy consumption and data center efficiency metrics? This includes Power Usage Effectiveness (PUE), total electricity consumed, and renewable energy percentages.
+
+3. **Per-Facility Data** -- Does the provider break down water and energy figures by individual facility? Aggregate numbers can obscure facility-level impacts on local water supplies. A data center consuming 1 billion gallons in a water-stressed region is a different story from the same usage in a water-abundant area.
+
+4. **AI-Specific Data** -- Does the provider publish water or energy data specific to AI workloads? Most providers report total data center resource use, which includes email, cloud storage, streaming, and everything else. Only one provider in our dataset -- Google -- has published per-query water estimates for an AI model ([Google Cloud Blog, 2025](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/)).
+
+5. **Water Pledge** -- Has the provider made a public commitment to water replenishment, water positivity, or similar water stewardship goals? We track the existence and specifics of the commitment, not whether it's been achieved.
+
+## What the Statuses Mean
+
+Each disclosure dimension receives one of three statuses:
+
+- **Yes** -- The provider publishes this data in a publicly accessible document. Every "yes" links to a source: a sustainability report, SEC filing, official blog post, or peer-reviewed paper. You can verify it yourself.
+
+- **No** -- We reviewed the provider's public reports and could not find this data disclosed. The `last_updated` date records when we last checked. "No" doesn't mean the provider doesn't have this data internally -- it means they haven't published it.
+
+- **Partial** -- Some data is published but it's incomplete. For example, a provider might report aggregate water use but not break it down by facility, or publish renewable energy percentages without reporting PUE. The detail field explains what is and isn't available.
+
+## How We Verify
+
+Every claim in the dataset links to a specific public document. We accept the following source types:
+
+**Acceptable sources:**
+- Published sustainability reports and environmental reports
+- SEC filings and annual reports
+- Official company blog posts that contain data (not just announcements)
+- Peer-reviewed academic papers
+- Government filings and regulatory documents
+
+**Not acceptable:**
+- Press releases that reference data without publishing it
+- Leaked or unverified internal documents
+- Social media posts
+- Unnamed sources or secondhand reporting
+- Our own calculations or estimates (this site tracks disclosure, not consumption)
+
+When a provider's status is "no," it means we checked their publicly available materials and found no disclosure. We don't call providers to ask. We don't rely on private conversations. If it's not published, the status is "no."
+
+## How We Stay Current
+
+- **Quarterly reviews** -- We review each provider's sustainability page and recent publications at least once per quarter.
+- **Report-driven updates** -- Most providers publish annual sustainability reports in Q2-Q3. When a new report drops, we update the relevant entries promptly.
+- **PR-based updates** -- Anyone can submit an update via pull request on GitHub. Every PR requires a source URL for each changed field.
+- **CHANGELOG tracking** -- Every dataset update is logged in `data/CHANGELOG.md` with the date, what changed, and the source link. The changelog is auditable.
+
+## How to Contribute
+
+This is an open-source project. If you find an error, notice a provider has published new data, or want to add a provider we haven't covered yet, you can submit a pull request on [GitHub](https://github.com/anthropics/ai-water-transparency).
+
+**Requirements for every PR:**
+- A `source_url` for each changed or added disclosure field
+- Updated `last_updated` date
+- A CHANGELOG entry with the date and source
+
+See [CONTRIBUTING.md](https://github.com/anthropics/ai-water-transparency/blob/main/CONTRIBUTING.md) for the full guide.
+
+## Why Water?
+
+Water is the overlooked dimension of AI's environmental impact. Carbon emissions get the headlines and the tracking tools. Water gets vague pledges and aggregate numbers buried in sustainability reports. But the data that does exist tells a clear story:
+
+- **Data centers are "among the least transparent industrial users of water."** A peer-reviewed study found that existing tools are insufficient for regulators and the public to assess data center water impacts. (Privette et al., 2026, *AGU Advances* -- [doi:10.1029/2025AV002140](https://doi.org/10.1029/2025AV002140))
+
+- **97% of data center water comes from municipal drinking water systems** -- the same systems that serve homes, hospitals, and farms. Many are already at capacity. (Bluefield Research, 2025)
+
+- **Fewer than 1 in 3 data center operators track water use effectiveness (WUE).** The industry's most basic water efficiency metric goes unmeasured at the majority of facilities. (World Economic Forum, 2024)
+
+- **Two-thirds of data centers built since 2022 are in water-stressed regions.** The boom in AI-driven construction is disproportionately concentrated where water is already scarce. (World Resources Institute, 2025)
+
+- **Google consumed 8.1 billion gallons of water in 2024, up 88% since 2019.** Google is the most transparent provider in our dataset -- and even their disclosures show a steep upward trend driven by AI workloads. ([Google 2024 Environmental Report](https://sustainability.google/reports/google-2024-environmental-report/))
+
+This information exists. It's scattered across sustainability reports, SEC filings, and academic papers. No one had assembled it into a single, maintained, citable reference. That's what this project does.
+
+## Source Bibliography
+
+The following primary sources are cited in the dataset and this methodology:
+
+| Source | Citation |
+|--------|----------|
+| Privette et al., 2026 | "Data Centers and Water: A Review of Water Use, Transparency, and Governance." *AGU Advances*. [doi:10.1029/2025AV002140](https://doi.org/10.1029/2025AV002140) |
+| Bluefield Research, 2025 | Analysis of data center water sourcing from municipal systems. |
+| World Economic Forum, 2024 | Report on data center water efficiency metric adoption. |
+| World Resources Institute, 2025 | Analysis of data center construction in water-stressed regions. |
+| Google, 2024 | *Google 2024 Environmental Report.* [sustainability.google](https://sustainability.google/reports/google-2024-environmental-report/) |
+| Google Cloud Blog, 2025 | "Measuring the Environmental Impact of AI Inference." [cloud.google.com](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/) |
+| Microsoft, 2024 | *Microsoft Sustainability Report.* [microsoft.com](https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report) |
+| Amazon, 2024 | *Amazon Sustainability Report.* [sustainability.aboutamazon.com](https://sustainability.aboutamazon.com/) |
+| Meta, 2024 | *Meta Sustainability Report.* [sustainability.fb.com](https://sustainability.fb.com/) |
+| Li et al., 2023/2025 | "Making AI Less Thirsty: Uncovering and Addressing the Secret Water Footprint of AI Models." *arXiv:2304.03271* |
+
+<section id="build-water">
+
+## How Much Water Did Building This Site Use?
+
+We built this site using Claude Code with Anthropic's Claude Opus 4.6 model. We tracked the tokens used during the build and estimated the water footprint using the same formula used in the [WaterLens](https://github.com/anthropics/waterlens) browser extension:
+
+```
+water_ml = energy_kWh x PUE x (WUE + WI_grid) x 1000
+```
+
+**Parameters used:**
+- **Model:** Claude Opus 4.6
+- **Energy per input token:** 66.0 joules
+- **Energy per output token:** 200.0 joules
+- **PUE (Power Usage Effectiveness):** 1.1 (industry average)
+- **WUE (Water Usage Effectiveness):** 1.8 L/kWh (US average)
+- **WI_grid (Grid water intensity):** 1.8 L/kWh (US average)
+- **Confidence:** Low -- Anthropic publishes no energy data. These values are derived from published research on comparable models, not from official figures.
+
+**Region:** US average defaults. Actual infrastructure spans AWS and Google Cloud regions.
+
+**For context:**
+- A single cup of coffee requires ~140,000 ml (140 liters) of water to produce
+- A glass of drinking water is 250 ml
+- A toilet flush uses ~9,000 ml (9 liters)
+- A single egg requires ~196,000 ml (196 liters) of water to produce
+
+**What this includes:** Water consumed by the data center cooling systems and the electricity grid that powers the servers during our build sessions.
+
+**What this excludes:** Water used to manufacture the hardware, water used by the humans working on this project, and any training water for the model itself.
+
+**Why we disclose this:** We ask AI providers to be transparent about water usage. We hold ourselves to the same standard. The estimate has low confidence because Anthropic -- the maker of the model we used -- publishes no energy data. That's the point: better data from providers would make estimates like this more accurate.
+
+The full log is available in `data/build-water-log.json` in the repository.
+
+</section>

@@ -1,0 +1,16 @@
+---
+import buildLog from '../../data/build-water-log.json';
+
+const totalWaterMl = buildLog.total_water_ml as number;
+const coffeeWaterMl = (buildLog.comparisons as Record<string, number>).cup_of_coffee_ml ?? 140_000;
+const show = totalWaterMl > 0;
+const coffeeFraction = show ? Math.floor(coffeeWaterMl / totalWaterMl) : 0;
+---
+
+{show && (
+  <p class="text-xs text-text-faint italic">
+    Building this site used approximately {Math.round(totalWaterMl)} ml of water —
+    less than 1/{coffeeFraction}th of
+    <a href="/methodology#build-water" class="underline hover:text-text-muted">a cup of coffee</a>.
+  </p>
+)}

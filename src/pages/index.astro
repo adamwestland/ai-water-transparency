@@ -1,17 +1,55 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProviderCard from '../components/ProviderCard.astro';
+import ProviderTable from '../components/ProviderTable.astro';
+import { providers } from '../lib/providers';
 
+const lastUpdated = providers
+  .map((p) => p.last_updated)
+  .sort()
+  .reverse()[0];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="mb-8">
+    <p class="text-lg leading-relaxed italic text-text-primary max-w-prose">
+      We think a public, cited record of what AI companies disclose about water should exist.
+      It didn't, so we started one.
+    </p>
+    <p class="text-xs text-text-faint mt-2">Last updated: {lastUpdated}</p>
+  </section>
+
+  <!-- Mobile: cards -->
+  <section class="md:hidden space-y-4 mb-8">
+    {providers.map((provider) => (
+      <ProviderCard provider={provider} />
+    ))}
+  </section>
+
+  <!-- Desktop: table -->
+  <section class="hidden md:block mb-8">
+    <ProviderTable providers={providers} />
+  </section>
+
+  <section class="max-w-prose text-sm text-text-muted leading-relaxed space-y-3 mb-8">
+    <p>
+      This report tracks what major AI providers publicly disclose about their water consumption,
+      energy usage, and environmental commitments. Every claim is sourced from published
+      sustainability reports and official statements.
+    </p>
+    <p>
+      We track five dimensions of transparency: total water usage, energy usage, per-facility
+      reporting, AI-specific environmental data, and water stewardship pledges.
+      <a href="/methodology" class="underline hover:text-text-primary">Read the full methodology.</a>
+    </p>
+  </section>
+
+  <section class="text-sm text-text-muted border-t border-border-subtle pt-6">
+    <p>
+      If you spot an error,
+      <a href="https://github.com/waterlens-ai/ai-water-transparency/issues" class="underline hover:text-text-primary" target="_blank" rel="noopener">open an issue</a>.
+      If a provider has published data we missed,
+      <a href="https://github.com/waterlens-ai/ai-water-transparency/pulls" class="underline hover:text-text-primary" target="_blank" rel="noopener">submit a PR</a>.
+    </p>
+  </section>
+</BaseLayout>

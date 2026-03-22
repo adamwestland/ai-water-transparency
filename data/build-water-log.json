@@ -1,0 +1,22 @@
+{
+  "model": "claude-opus-4-6",
+  "method": "waterlens methodology — water_ml = energy_kWh × PUE × (WUE + WI_grid) × 1000",
+  "parameters": {
+    "energy_per_input_token_joules": 66.0,
+    "energy_per_output_token_joules": 200.0,
+    "PUE": 1.1,
+    "WUE": 1.8,
+    "WI_grid": 1.8,
+    "confidence": "low"
+  },
+  "comparisons": {
+    "cup_of_coffee_ml": 140000,
+    "glass_of_water_ml": 250,
+    "toilet_flush_ml": 9000,
+    "one_egg_ml": 196000
+  },
+  "entries": [],
+  "total_water_ml": 0,
+  "last_updated": "2026-03-22",
+  "notes": "Token counts to be updated after build sessions. Energy values for Claude Opus 4.6 have low confidence — Anthropic publishes no energy data."
+}

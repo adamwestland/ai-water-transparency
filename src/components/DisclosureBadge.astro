@@ -1,0 +1,25 @@
+---
+import type { DisclosureStatus } from '../lib/providers';
+
+interface Props {
+  status: DisclosureStatus;
+}
+
+const { status } = Astro.props;
+
+const labels: Record<DisclosureStatus, string> = {
+  yes: 'Yes',
+  no: 'No',
+  partial: 'Partial',
+};
+
+const classes: Record<DisclosureStatus, string> = {
+  yes: 'bg-badge-yes-bg text-badge-yes-text',
+  no: 'bg-badge-no-bg text-badge-no-text',
+  partial: 'bg-badge-partial-bg text-badge-partial-text',
+};
+---
+
+<span class={`text-xs font-medium px-2 py-0.5 rounded ${classes[status]}`}>
+  {labels[status]}
+</span>

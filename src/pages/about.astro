@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — AI Water Transparency Report" description="Why we built the AI Water Transparency Report and who maintains it.">
+  <article class="prose prose-neutral max-w-prose mx-auto">
+    <h1>About</h1>
+
+    <p>
+      AI systems consume water. Data centers use it for cooling. Power plants use it to generate
+      the electricity those data centers need. As AI usage grows, so does the water footprint.
+    </p>
+
+    <p>
+      We looked for a simple, sourced comparison of what major AI providers actually disclose
+      about their water consumption. It didn't exist. So we started one.
+    </p>
+
+    <h2>What this is</h2>
+    <p>
+      A public record of environmental transparency across the AI industry. Not a score. Not a
+      ranking. Just a factual accounting of what each provider chooses to publish — and what they
+      don't.
+    </p>
+
+    <h2>What this is not</h2>
+    <p>
+      This is not an environmental impact assessment. We do not estimate total water usage for
+      providers who don't report it. We do not assign scores or grades. We report what is
+      disclosed and cite the source.
+    </p>
+
+    <h2>How it's built</h2>
+    <p>
+      This site is built with Astro, ships zero JavaScript, and is entirely open source.
+      The data is maintained as a JSON file and validated against a schema.
+      Every build produces static HTML — no servers, no tracking, no cookies.
+    </p>
+    <p>
+      This site was built with Claude Code. We disclose this because transparency is the point.
+    </p>
+  </article>
+</BaseLayout>

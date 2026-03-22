@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Methodology — AI Water Transparency Report" description="How we assess and verify AI provider water transparency disclosures.">
+  <article class="prose prose-neutral max-w-prose mx-auto">
+    <h1>Methodology</h1>
+
+    <h2>What we track</h2>
+    <p>
+      We assess five dimensions of environmental transparency for each major AI provider:
+    </p>
+    <dl>
+      <dt><strong>Water Usage</strong></dt>
+      <dd>Does the provider publish total water consumption figures for their data center operations?</dd>
+
+      <dt><strong>Energy Usage</strong></dt>
+      <dd>Does the provider publish energy consumption data, including metrics like PUE (Power Usage Effectiveness)?</dd>
+
+      <dt><strong>Per-Facility Data</strong></dt>
+      <dd>Does the provider break down environmental data by individual facility or region?</dd>
+
+      <dt><strong>AI-Specific Data</strong></dt>
+      <dd>Does the provider publish water or energy data specific to AI/ML workloads, as opposed to aggregate data center figures?</dd>
+
+      <dt><strong>Water Pledge</strong></dt>
+      <dd>Has the provider made a public commitment to water stewardship, replenishment, or positivity?</dd>
+    </dl>
+
+    <h2>How we assess</h2>
+    <p>
+      Each dimension receives one of three ratings:
+    </p>
+    <ul>
+      <li><strong>Yes</strong> — The provider publishes substantive data in this area, sourced from an official report or statement.</li>
+      <li><strong>Partial</strong> — Some data is published but is incomplete, inconsistent, or lacks granularity compared to peers.</li>
+      <li><strong>No</strong> — No relevant data has been published as of the last review date.</li>
+    </ul>
+
+    <h2>How we verify</h2>
+    <p>
+      Every assessment links to its source: a published sustainability report, official blog post,
+      or regulatory filing. We do not use anonymous tips, leaked documents, or third-party estimates
+      without clear attribution. If we cannot cite a source, the assessment is "No."
+    </p>
+
+    <h2 id="build-water">Build water</h2>
+    <p>
+      We estimate the water footprint of building this site using the same methodology as the
+      WaterLens browser extension: per-token energy estimates, regional PUE/WUE values, and
+      grid water intensity. The coffee comparison uses 140 liters per cup from the
+      Water Footprint Network.
+    </p>
+
+    <h2>Contributing</h2>
+    <p>
+      This is an open-source project. If you find an error or have data we missed, please
+      open an issue or submit a pull request on GitHub. All contributions must include a
+      verifiable source.
+    </p>
+  </article>
+</BaseLayout>
