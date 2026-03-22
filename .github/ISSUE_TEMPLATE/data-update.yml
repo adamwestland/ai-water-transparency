@@ -1,0 +1,46 @@
+name: Data Update
+description: Report new or changed provider disclosure data
+title: "[Data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        All data changes must be traceable to a published source. Please provide the source URL and a quote or description of the relevant data.
+  - type: input
+    id: provider
+    attributes:
+      label: Provider name
+      placeholder: e.g., Google, Anthropic, xAI
+    validations:
+      required: true
+  - type: textarea
+    id: what-changed
+    attributes:
+      label: What data needs updating?
+      description: Which disclosure dimension(s) and what the new status should be.
+      placeholder: e.g., "Water Usage should be changed from No to Yes — they published a sustainability report in Q2 2026"
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: Source URL
+      description: Link to the published report, filing, or paper.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: source-quote
+    attributes:
+      label: Relevant quote or description from source
+      description: Copy the relevant passage or describe where in the document the data appears.
+    validations:
+      required: true
+  - type: input
+    id: source-date
+    attributes:
+      label: Source publication date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
