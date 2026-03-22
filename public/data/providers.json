@@ -196,5 +196,137 @@
       }
     },
     "last_updated": "2026-03-22"
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI (ChatGPT)",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "partial",
+        "detail": "CEO disclosed ~0.3 ml direct water per average ChatGPT query (mid-2025), but no total water consumption figures or methodology published. Excludes indirect water from electricity generation.",
+        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+      },
+      "energy_usage": {
+        "status": "partial",
+        "detail": "CEO disclosed ~0.34 Wh per average ChatGPT query (mid-2025). No total energy consumption figures published. Runs on Microsoft Azure infrastructure.",
+        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Does not operate its own data centers (runs on Microsoft Azure). No facility-level data published. Stargate project campuses are under construction.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "partial",
+        "detail": "Published per-query energy and water estimates for ChatGPT via CEO statement, but figures are unverified, exclude training costs, and definition of 'average query' is unclear.",
+        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+      },
+      "water_pledge": {
+        "status": "partial",
+        "detail": "Stargate project commits to closed-loop cooling and water positivity at new campuses via partner Vantage, but no company-wide water positive pledge published by OpenAI itself.",
+        "source_url": "https://openai.com/index/stargate-community/"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "xai",
+    "name": "xAI (Grok)",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No water usage data published. Memphis Colossus facility draws ~1.3M gallons/day from the aquifer per reporting by environmental groups, but xAI has not disclosed figures itself.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "no",
+        "detail": "No energy consumption data published. Operates its own data centers with gas turbines and battery storage, but has not disclosed total energy usage.",
+        "source_url": null
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Operates the Colossus facility in Memphis, TN, but publishes no environmental data for it. Environmental impact information comes from third-party investigations and permit filings.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No per-model or per-query energy or water data published for Grok models.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "partial",
+        "detail": "Building an $80M water recycling plant to use treated wastewater instead of aquifer water at Memphis facility, expected operational late 2026. No formal company-wide water positive pledge.",
+        "source_url": "https://www.governing.com/resilience/wastewater-will-cool-this-memphis-data-center"
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral (Le Chat)",
+    "sustainability_report_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Published total water consumption for Mistral Large 2: 281,000 m3 over 18 months (training + inference). Conducted ISO 14040/44-compliant lifecycle analysis with Carbone 4 and ADEME.",
+        "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Published energy data and greenhouse gas emissions (20.4 kt CO2e for Mistral Large 2 training + 18 months of use) via comprehensive lifecycle analysis.",
+        "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Operates a 40 MW facility in Essonne, France and is building data centers in Sweden, but does not publish per-facility environmental breakdowns.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "yes",
+        "detail": "Published per-query environmental impact: 45 ml water, 1.14g CO2e, and 0.16 mg antimony-equivalent resource depletion per 400-token Le Chat response.",
+        "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water positive or replenishment pledge. Committed to ongoing environmental reporting and contributing to international AI sustainability standards.",
+        "source_url": null
+      }
+    },
+    "last_updated": "2026-03-22"
+  },
+  {
+    "id": "cohere",
+    "name": "Cohere",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "no",
+        "detail": "No energy consumption data published. Published a policy primer on AI energy efficiency but disclosed no data about its own operations. Relies on third-party cloud infrastructure.",
+        "source_url": null
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Not applicable — Cohere does not operate its own data centers.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No per-model or per-query energy or water data published.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water-related sustainability commitments published.",
+        "source_url": null
+      }
+    },
+    "last_updated": "2026-03-22"
   }
 ]
