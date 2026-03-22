@@ -15,8 +15,35 @@
     "toilet_flush_ml": 9000,
     "one_egg_ml": 196000
   },
-  "entries": [],
-  "total_water_ml": 0,
+  "entries": [
+    {
+      "date": "2026-03-22",
+      "phase": "research and planning",
+      "estimated_input_tokens": 300000,
+      "estimated_output_tokens": 80000,
+      "water_ml": 29040,
+      "notes": "Reading 8 research docs, competitive analysis, design decisions, logo exploration, plan development"
+    },
+    {
+      "date": "2026-03-22",
+      "phase": "site build",
+      "estimated_input_tokens": 400000,
+      "estimated_output_tokens": 150000,
+      "water_ml": 71280,
+      "notes": "Astro scaffold, 3 parallel agents (site-builder, data-content, waterlens-cleanup), all components, pages, data, docs"
+    },
+    {
+      "date": "2026-03-22",
+      "phase": "security and deployment",
+      "estimated_input_tokens": 100000,
+      "estimated_output_tokens": 40000,
+      "water_ml": 17160,
+      "notes": "Security audit agent, issue/PR templates, branch protection, OG image, Cloudflare Pages deployment"
+    }
+  ],
+  "total_water_ml": 117480,
+  "total_water_liters": 117.48,
+  "coffee_equivalent": "5/6 of a cup of coffee",
   "last_updated": "2026-03-22",
-  "notes": "Token counts to be updated after build sessions. Energy values for Claude Opus 4.6 have low confidence — Anthropic publishes no energy data."
+  "notes": "Token counts are estimates based on conversation length and agent work. Energy values for Claude Opus 4.6 have low confidence — Anthropic publishes no energy data. Total: ~800K input tokens + ~270K output tokens across research, building, and deployment."
 }
