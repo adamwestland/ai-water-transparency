@@ -9,10 +9,10 @@ interface Props {
 
 const { providers } = Astro.props;
 
-const cellBg = {
-  yes: 'bg-badge-yes-bg',
-  no: 'bg-badge-no-bg',
-  partial: 'bg-badge-partial-bg',
+const barColor = {
+  yes: 'border-badge-yes-text',
+  no: 'border-badge-no-text',
+  partial: 'border-badge-partial-text',
 };
 
 const colCount = DISCLOSURE_ORDER.length + 1;
@@ -31,20 +31,20 @@ const colCount = DISCLOSURE_ORDER.length + 1;
       </tr>
     </thead>
     <tbody>
-      {providers.map((provider, i) => (
+      {providers.map((provider) => (
         <>
           <tr
-            class={`border-b border-border-subtle cursor-pointer provider-row ${i % 2 === 1 ? 'bg-bg-warm/50' : ''}`}
+            class="cursor-pointer provider-row"
             data-provider={provider.id}
           >
-            <td class="py-3 pr-4">
+            <td class="py-3 pr-4 border-b-4 border-transparent">
               <span class="font-semibold text-text-primary">{provider.name}</span>
             </td>
             {DISCLOSURE_ORDER.map((key) => {
               const disclosure = provider.disclosures[key];
-              if (!disclosure) return <td class="px-3 py-3" />;
+              if (!disclosure) return <td class="px-3 py-3 border-b-4 border-transparent" />;
               return (
-                <td class={`px-3 py-3 text-center ${cellBg[disclosure.status] || ''}`}>
+                <td class={`px-3 py-3 text-center border-b-4 ${barColor[disclosure.status] || 'border-transparent'}`}>
                   <DisclosureBadge status={disclosure.status} />
                 </td>
               );

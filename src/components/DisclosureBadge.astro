@@ -14,12 +14,12 @@ const labels: Record<DisclosureStatus, string> = {
 };
 
 const classes: Record<DisclosureStatus, string> = {
-  yes: 'text-badge-yes-text',
-  no: 'text-badge-no-text',
-  partial: 'text-badge-partial-text',
+  yes: 'text-badge-yes-text font-semibold',
+  no: 'text-badge-no-text font-normal',
+  partial: 'text-badge-partial-text font-medium',
 };
 ---
 
-<span class={`text-sm font-medium ${classes[status]}`}>
+<span class={`text-sm ${classes[status]}`}>
   {labels[status]}
 </span>
