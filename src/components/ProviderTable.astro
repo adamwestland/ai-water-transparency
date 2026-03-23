@@ -8,6 +8,14 @@ interface Props {
 }
 
 const { providers } = Astro.props;
+
+const cellBg = {
+  yes: 'bg-badge-yes-bg',
+  no: 'bg-badge-no-bg',
+  partial: 'bg-badge-partial-bg',
+};
+
+const colCount = DISCLOSURE_ORDER.length + 1;
 ---
 
 <div class="overflow-x-auto">
@@ -16,7 +24,7 @@ const { providers } = Astro.props;
       <tr class="border-b border-border-subtle">
         <th class="text-left text-xs font-medium text-text-faint uppercase tracking-wider py-3 pr-4">Provider</th>
         {DISCLOSURE_ORDER.map((key) => (
-          <th class="text-left text-xs font-medium text-text-faint uppercase tracking-wider py-3 px-3">
+          <th class="text-center text-xs font-medium text-text-faint uppercase tracking-wider py-3 px-3">
             {DISCLOSURE_LABELS[key]}
           </th>
         ))}
@@ -24,43 +32,69 @@ const { providers } = Astro.props;
     </thead>
     <tbody>
       {providers.map((provider, i) => (
-        <tr class={`border-b border-border-subtle ${i % 2 === 1 ? 'bg-bg-warm/50' : ''}`}>
-          <td class="py-3 pr-4">
-            <span class="font-semibold text-text-primary">{provider.name}</span>
-          </td>
-          {DISCLOSURE_ORDER.map((key) => {
-            const disclosure = provider.disclosures[key];
-            if (!disclosure) return <td class="px-3 py-3" />;
-            return (
-              <td class="px-3 py-3">
-                <details>
-                  <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <DisclosureBadge status={disclosure.status} />
-                  </summary>
-                  <div class="mt-2 text-xs text-text-muted leading-relaxed max-w-48">
-                    <p>{disclosure.detail}</p>
-                    {disclosure.source_url ? (
-                      <a
-                        href={disclosure.source_url}
-                        class="underline hover:text-text-primary mt-1 inline-block"
-                        style="color: #2d6a9f;"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        View source &rarr;
-                      </a>
-                    ) : (
-                      <p class="text-text-faint mt-1">
-                        Checked {provider.last_updated}
-                      </p>
-                    )}
-                  </div>
-                </details>
-              </td>
-            );
-          })}
-        </tr>
+        <>
+          <tr
+            class={`border-b border-border-subtle cursor-pointer provider-row ${i % 2 === 1 ? 'bg-bg-warm/50' : ''}`}
+            data-provider={provider.id}
+          >
+            <td class="py-3 pr-4">
+              <span class="font-semibold text-text-primary">{provider.name}</span>
+            </td>
+            {DISCLOSURE_ORDER.map((key) => {
+              const disclosure = provider.disclosures[key];
+              if (!disclosure) return <td class="px-3 py-3" />;
+              return (
+                <td class={`px-3 py-3 text-center ${cellBg[disclosure.status] || ''}`}>
+                  <DisclosureBadge status={disclosure.status} />
+                </td>
+              );
+            })}
+          </tr>
+          <tr class="provider-detail hidden" data-provider-detail={provider.id}>
+            <td colspan={colCount} class="px-4 py-4 bg-bg-card border-b border-border-subtle">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-text-muted leading-relaxed">
+                {DISCLOSURE_ORDER.map((key) => {
+                  const disclosure = provider.disclosures[key];
+                  if (!disclosure) return null;
+                  return (
+                    <div>
+                      <p class="font-medium text-text-primary mb-1">{DISCLOSURE_LABELS[key]}</p>
+                      <p>{disclosure.detail}</p>
+                      {disclosure.source_url ? (
+                        <a
+                          href={disclosure.source_url}
+                          class="underline hover:text-text-primary mt-1 inline-block"
+                          style="color: #2d6a9f;"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          View source &rarr;
+                        </a>
+                      ) : (
+                        <p class="text-text-faint mt-1">
+                          Checked {provider.last_updated}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </td>
+          </tr>
+        </>
       ))}
     </tbody>
   </table>
 </div>
+
+<script>
+  document.querySelectorAll('.provider-row').forEach((row) => {
+    row.addEventListener('click', () => {
+      const id = row.getAttribute('data-provider');
+      const detail = document.querySelector(`.provider-detail[data-provider-detail="${id}"]`);
+      if (detail) {
+        detail.classList.toggle('hidden');
+      }
+    });
+  });
+</script>
