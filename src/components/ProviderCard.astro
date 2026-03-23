@@ -8,6 +8,12 @@ interface Props {
 }
 
 const { provider } = Astro.props;
+
+const rowBg = {
+  yes: 'bg-badge-yes-bg',
+  no: 'bg-badge-no-bg',
+  partial: 'bg-badge-partial-bg',
+};
 ---
 
 <article class="bg-bg-card border border-border-card rounded px-5 py-4">
@@ -31,7 +37,7 @@ const { provider } = Astro.props;
       const disclosure = provider.disclosures[key];
       if (!disclosure) return null;
       return (
-        <details class="border-t border-border-subtle">
+        <details class={`border-t border-border-subtle ${rowBg[disclosure.status] || ''} px-3 -mx-3`}>
           <summary class="flex items-center justify-between py-2.5 cursor-pointer text-sm font-body text-text-primary">
             <span>{DISCLOSURE_LABELS[key]}</span>
             <DisclosureBadge status={disclosure.status} />
