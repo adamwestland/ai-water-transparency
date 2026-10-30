@@ -28,7 +28,7 @@ Read `CLAUDE.md` first. Its sourcing rules apply to every step here, and `REVIEW
 
 Also search for "<provider> sustainability report <year>", "<provider> water usage data center", and new SEC 10-K climate disclosures.
 
-Known quirks: x.ai, openai.com and perplexity.ai often block automated reads. Use search results and cached copies to find the page, and say in the PR that you couldn't open it directly. Report PDFs are the authority over news coverage of them; read the figure from the PDF.
+Known quirks: x.ai, openai.com and perplexity.ai often block automated reads. Use search results and cached copies to find the page, and say in the PR that you couldn't open it directly. Report PDFs are the authority over news coverage of them; read the figure from the PDF. Large report PDFs (Google, Microsoft) can exceed WebFetch's size limit; download them with `curl` and extract text with `pdftotext`.
 
 ## Steps
 
