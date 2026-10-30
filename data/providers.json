@@ -2,68 +2,68 @@
   {
     "id": "google",
     "name": "Google (Gemini)",
-    "sustainability_report_url": "https://sustainability.google/reports/google-2024-environmental-report/",
+    "sustainability_report_url": "https://sustainability.google/reports/google-2026-environmental-report/",
     "disclosures": {
       "water_usage": {
         "status": "yes",
-        "detail": "Reports total water consumption annually (8.1B gallons in 2024, up 88% since 2019). Reports fleet-wide WUE (~1.1 L/kWh).",
-        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+        "detail": "Reports total water consumption annually (10.9B gallons in 2025, up 34% from 2024), with withdrawal, discharge and consumption broken out for data centers and offices.",
+        "source_url": "https://sustainability.google/reports/google-2026-environmental-report/"
       },
       "energy_usage": {
         "status": "yes",
-        "detail": "Reports total energy consumption and fleet-wide PUE (~1.10). Publishes carbon-free energy percentage.",
-        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+        "detail": "Reports total energy consumption (44.0M MWh in 2025, of which 42.4M MWh data centers) and a 2025 fleet-wide average PUE of 1.09. Reports ~65% global hourly carbon-free energy in 2025.",
+        "source_url": "https://sustainability.google/reports/google-2026-environmental-report/"
       },
       "per_facility_reporting": {
-        "status": "partial",
-        "detail": "Some facility-level data available (e.g., Council Bluffs 1B gallons in 2024), but not systematically published for all sites.",
-        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+        "status": "yes",
+        "detail": "Publishes water withdrawal, discharge and consumption for each data center location (e.g., Council Bluffs, IA: 1.35B gallons consumed in 2025) and PUE per facility.",
+        "source_url": "https://sustainability.google/reports/google-2026-environmental-report/"
       },
       "ai_specific_data": {
         "status": "yes",
-        "detail": "Published per-query water estimate for Gemini (0.26 ml) via Google Cloud Blog (2025).",
+        "detail": "Published per-prompt estimates for the median Gemini Apps text prompt (0.24 Wh energy, 0.03 gCO2e, 0.26 ml water) with a technical methodology paper (2025); repeated in the 2026 Environmental Report.",
         "source_url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/"
       },
       "water_pledge": {
         "status": "yes",
-        "detail": "Pledged to replenish 120% of water consumed by 2030. Replenished ~4.5B gallons (~64%) in 2024.",
-        "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+        "detail": "Aims to replenish 120% of the freshwater it consumes, on average across offices and data centers, by 2030. Replenished ~7.7B gallons (~78% of freshwater consumption) in 2025.",
+        "source_url": "https://sustainability.google/reports/google-2026-environmental-report/"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "microsoft",
     "name": "Microsoft (OpenAI)",
-    "sustainability_report_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report",
+    "sustainability_report_url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/sustainability/report/",
     "disclosures": {
       "water_usage": {
         "status": "yes",
-        "detail": "Reports total water consumption annually (6.4M cubic meters in 2022, 34% YoY increase). Explicitly attributed increase to AI infrastructure.",
-        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+        "detail": "Reports total water withdrawal (13,266 ML) and consumption (8,170 ML, up 22% year over year) for FY25 in its Environmental Data Fact Sheet. Reports a global average datacenter WUE of 0.27 L/kWh for FY25.",
+        "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf"
       },
       "energy_usage": {
         "status": "yes",
-        "detail": "Reports total energy consumption. Does not consistently report average PUE across fleet.",
-        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+        "detail": "Reports total energy consumption (37.5M MWh in FY25) and a global average datacenter PUE of 1.17 for FY25.",
+        "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf"
       },
       "per_facility_reporting": {
         "status": "no",
-        "detail": "Does not publish per-facility water or energy breakdowns.",
-        "source_url": null
+        "detail": "Publishes datacenter PUE and WUE for three broad regions (Americas, Asia Pacific, EMEA) but not water or energy figures for individual facilities.",
+        "source_url": "https://datacenters.microsoft.com/sustainability/efficiency/"
       },
       "ai_specific_data": {
         "status": "no",
-        "detail": "No published water or energy data specific to AI workloads or OpenAI models.",
-        "source_url": null
+        "detail": "Does not publish measured water or energy figures for its AI workloads. The FY25 report cites Microsoft research that optimized large-scale inference can use under one watt-hour per query, but gives no figures for Copilot or OpenAI workloads.",
+        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/sustainability/report/"
       },
       "water_pledge": {
         "status": "yes",
-        "detail": "Pledged to be water positive by 2030 — replenish more water than consumed globally.",
-        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+        "detail": "Pledged to be water positive by 2030 by reducing water use and replenishing more than it withdraws. Reports replenishing over 14.2M cubic meters in FY25, exceeding its global withdrawals.",
+        "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/sustainability/report/"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "amazon",
@@ -71,19 +71,19 @@
     "sustainability_report_url": "https://sustainability.aboutamazon.com/",
     "disclosures": {
       "water_usage": {
-        "status": "partial",
-        "detail": "Reports water use but with less granularity than peers. Official total figures are less clear than Google or Microsoft.",
-        "source_url": "https://sustainability.aboutamazon.com/"
+        "status": "yes",
+        "detail": "Reports total water withdrawal for AWS data centers (9.4B liters in 2025) and a global WUE of 0.12 L/kWh. Does not report a separate water consumption figure.",
+        "source_url": "https://sustainability.aboutamazon.com/2025-aws-summary.pdf"
       },
       "energy_usage": {
         "status": "partial",
-        "detail": "Reports renewable energy progress (100% renewable by 2025 goal). Only market-based emissions reported, not location-based. Does not report PUE.",
-        "source_url": "https://sustainability.aboutamazon.com/"
+        "detail": "Reports a global AWS data center PUE of 1.14 for 2025 and that electricity consumed is matched with renewable energy. Does not report a total energy consumption figure for AWS.",
+        "source_url": "https://sustainability.aboutamazon.com/2025-aws-summary.pdf"
       },
       "per_facility_reporting": {
-        "status": "no",
-        "detail": "Does not publish per-facility water or energy data.",
-        "source_url": null
+        "status": "partial",
+        "detail": "Publishes AWS fact sheets by location with water withdrawal, PUE and WUE (e.g., Virginia: 263M gallons withdrawn in 2025), but not figures for individual data centers.",
+        "source_url": "https://sustainability.aboutamazon.com/aws-sustainability-fact-sheets/aws-fact-sheet-virginia.pdf"
       },
       "ai_specific_data": {
         "status": "no",
@@ -92,44 +92,44 @@
       },
       "water_pledge": {
         "status": "yes",
-        "detail": "Pledged to be water positive by 2030. Some AWS regions use zero-water cooling (e.g., Ireland, Sweden).",
-        "source_url": "https://sustainability.aboutamazon.com/"
+        "detail": "Pledged that AWS will be water positive across its data centers by 2030. Reports being 75% of the way toward that goal at the end of 2025.",
+        "source_url": "https://sustainability.aboutamazon.com/natural-resources/water"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "meta",
     "name": "Meta (LLaMA)",
-    "sustainability_report_url": "https://sustainability.fb.com/",
+    "sustainability_report_url": "https://sustainability.atmeta.com/2025-sustainability-report/",
     "disclosures": {
       "water_usage": {
         "status": "yes",
-        "detail": "Reports total water consumption (813M gallons in 2023, 95% from data centers). Reports WUE (~0.26 L/kWh), among the lowest in industry.",
-        "source_url": "https://sustainability.fb.com/"
+        "detail": "Reports total water withdrawal (5,637 ML) and consumption (3,123 ML, 2,974 ML from data centers) for 2024 in its Environmental Data Index. Reports an annual data center WUE of 0.19 L/kWh.",
+        "source_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf"
       },
       "energy_usage": {
         "status": "yes",
-        "detail": "Reports total energy consumption and renewable energy progress.",
-        "source_url": "https://sustainability.fb.com/"
+        "detail": "Reports total electricity consumption (18.4M MWh in 2024) and a data center PUE of 1.08 in its Environmental Data Index.",
+        "source_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf"
       },
       "per_facility_reporting": {
         "status": "yes",
-        "detail": "Some facility-level detail published (e.g., Prineville, OR uses zero water for cooling).",
-        "source_url": "https://sustainability.fb.com/"
+        "detail": "Publishes water withdrawal and electricity consumption for each data center (e.g., Prineville, OR: 328 ML withdrawn and 1.73M MWh consumed in 2024).",
+        "source_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf"
       },
       "ai_specific_data": {
-        "status": "no",
-        "detail": "No published water or energy data specific to AI workloads (LLaMA training, Reels inference, etc.).",
-        "source_url": null
+        "status": "partial",
+        "detail": "Llama model cards report training GPU hours, per-GPU power and estimated training emissions (e.g., Llama 4: 7.38M GPU hours). No water data and no inference energy data published.",
+        "source_url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md"
       },
       "water_pledge": {
         "status": "yes",
-        "detail": "Committed to net-zero emissions across value chain by 2030; water stewardship investments ongoing.",
-        "source_url": "https://sustainability.fb.com/"
+        "detail": "Set a goal to become water positive in 2030, restoring 200% of water consumed in high water stress regions and 100% in medium water stress regions. Reports restoring over 1.6B gallons in 2024.",
+        "source_url": "https://sustainability.atmeta.com/water/"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "anthropic",
@@ -138,7 +138,7 @@
     "disclosures": {
       "water_usage": {
         "status": "no",
-        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "detail": "No sustainability report or water usage data published as of October 2026.",
         "source_url": null
       },
       "energy_usage": {
@@ -162,7 +162,7 @@
         "source_url": null
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "perplexity",
@@ -171,7 +171,7 @@
     "disclosures": {
       "water_usage": {
         "status": "no",
-        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "detail": "No sustainability report or water usage data published as of October 2026.",
         "source_url": null
       },
       "energy_usage": {
@@ -195,7 +195,7 @@
         "source_url": null
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "openai",
@@ -205,12 +205,12 @@
       "water_usage": {
         "status": "partial",
         "detail": "CEO disclosed ~0.3 ml direct water per average ChatGPT query (mid-2025), but no total water consumption figures or methodology published. Excludes indirect water from electricity generation.",
-        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+        "source_url": "https://blog.samaltman.com/the-gentle-singularity"
       },
       "energy_usage": {
         "status": "partial",
         "detail": "CEO disclosed ~0.34 Wh per average ChatGPT query (mid-2025). No total energy consumption figures published. Runs on Microsoft Azure infrastructure.",
-        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+        "source_url": "https://blog.samaltman.com/the-gentle-singularity"
       },
       "per_facility_reporting": {
         "status": "no",
@@ -220,15 +220,15 @@
       "ai_specific_data": {
         "status": "partial",
         "detail": "Published per-query energy and water estimates for ChatGPT via CEO statement, but figures are unverified, exclude training costs, and definition of 'average query' is unclear.",
-        "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+        "source_url": "https://blog.samaltman.com/the-gentle-singularity"
       },
       "water_pledge": {
         "status": "partial",
-        "detail": "Stargate project commits to closed-loop cooling and water positivity at new campuses via partner Vantage, but no company-wide water positive pledge published by OpenAI itself.",
+        "detail": "Stargate Community plan commits to prioritizing closed-loop or low-water cooling at Stargate campuses. No company-wide water positive or replenishment pledge published by OpenAI.",
         "source_url": "https://openai.com/index/stargate-community/"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "xai",
@@ -257,11 +257,11 @@
       },
       "water_pledge": {
         "status": "partial",
-        "detail": "Building an $80M water recycling plant to use treated wastewater instead of aquifer water at Memphis facility, expected operational late 2026. No formal company-wide water positive pledge.",
-        "source_url": "https://www.governing.com/resilience/wastewater-will-cool-this-memphis-data-center"
+        "detail": "Committed to building an $80M wastewater recycling plant to supply its Memphis facility instead of aquifer water. Construction paused in April 2026; the company has said it will resume no later than Q1 2027. No company-wide water pledge.",
+        "source_url": "https://www.datacenterdynamics.com/en/news/spacexai-to-restart-work-on-wastewater-treatment-facility-to-serve-memphis-data-centers-by-q1-2027/"
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "mistral",
@@ -294,7 +294,7 @@
         "source_url": null
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   },
   {
     "id": "cohere",
@@ -303,7 +303,7 @@
     "disclosures": {
       "water_usage": {
         "status": "no",
-        "detail": "No sustainability report or water usage data published as of March 2026.",
+        "detail": "No sustainability report or water usage data published as of October 2026.",
         "source_url": null
       },
       "energy_usage": {
@@ -327,6 +327,6 @@
         "source_url": null
       }
     },
-    "last_updated": "2026-03-22"
+    "last_updated": "2026-10-30"
   }
 ]
