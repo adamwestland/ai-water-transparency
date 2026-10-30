@@ -18,7 +18,7 @@ This project addresses that gap. Not by calculating water usage or assigning sco
 
 ## What This Is
 
-- An **open-source dataset** (`data/providers.json`) tracking disclosure status across 5 dimensions for 6 major AI providers
+- An **open-source dataset** (`data/providers.json`) tracking disclosure status across 5 dimensions for 10 major AI providers
 - A **static website** that renders the data into a readable, linkable reference
 - **Schema-validated** and **version-controlled** -- every change is logged with a source
 - Licensed under **CC BY 4.0** (data) so researchers, journalists, and developers can use it freely
