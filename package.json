@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate": "ajv validate -s data/schema.json -d data/providers.json"
+    "validate": "ajv validate -s data/schema.json -d data/providers.json",
+    "check-data": "node scripts/check-data.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "7.0.8",

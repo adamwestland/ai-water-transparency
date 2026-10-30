@@ -35,6 +35,7 @@ npm run dev          # Astro dev server
 npm run build        # Production build (output: dist/)
 npm run preview      # Preview production build locally
 npm run validate     # Validate providers.json against schema
+npm run check-data   # Data-integrity checks; pass a base ref (e.g. -- origin/main) to check changed providers
 ```
 
 ## Tech Stack
@@ -44,7 +45,7 @@ npm run validate     # Validate providers.json against schema
 - MDX for methodology content
 - `data/providers.json` is imported at build time (fully static)
 - Cloudflare Pages deploys the `dist/` directory
-- GitHub Actions validates JSON schema on PR
+- GitHub Actions validates JSON schema, data integrity and the build on PR; Claude reviews PRs against `REVIEW.md` (advisory)
 
 ## Repo Structure
 
@@ -59,6 +60,9 @@ npm run validate     # Validate providers.json against schema
 - `src/pages/` -- Astro pages.
 - `TRANSPARENCY.md` -- AI tool disclosure.
 - `CONTRIBUTING.md` -- How to submit updates (source URL required).
+- `REVIEW.md` -- Review policy for PRs (sourcing, neutrality, code).
+- `scripts/check-data.mjs` -- Data-integrity checks the schema can't express.
+- `.claude/skills/data-refresh/` -- Procedure for the monthly data refresh.
 
 ## Updating the Dataset
 
@@ -68,7 +72,7 @@ When updating `data/providers.json`:
 2. Update or add `source_url` for every changed field
 3. Update `last_updated` to today's date (ISO format: YYYY-MM-DD)
 4. Add an entry to `data/CHANGELOG.md` with: date, what changed, source link
-5. Run `npm run validate` to check JSON schema
+5. Run `npm run validate` and `npm run check-data -- origin/main`
 
 ## Adding a New Provider
 
@@ -85,3 +89,7 @@ When updating `data/providers.json`:
 - Status values are exactly one of: `yes`, `no`, `partial`
 - Source URLs must be HTTPS and point to a publicly accessible page
 - Detail text is a single sentence or two, factual, present tense
+
+## Scheduled Data Refresh
+
+A monthly scheduled Claude session follows `.claude/skills/data-refresh/SKILL.md`: a change check most months and a full re-verification in January, April, July and October. It opens a PR only when something changed. It never merges or pushes to `main`; a human merges after CI and review.
