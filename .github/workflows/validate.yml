@@ -18,5 +18,13 @@ jobs:
       - run: npm ci
       - name: Validate JSON Schema
         run: npx ajv-cli validate -s data/schema.json -d data/providers.json
+      - name: Check data integrity
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+            node scripts/check-data.mjs FETCH_HEAD
+          else
+            node scripts/check-data.mjs
+          fi
       - name: Build
         run: npm run build
