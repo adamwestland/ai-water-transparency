@@ -1,0 +1,39 @@
+name: Deploy
+
+# Publishes the site to Cloudflare Pages on every push to main, so a merged
+# data refresh goes live (including the "Last updated" date, which is derived
+# from data/providers.json at build time).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - run: npm ci
+      - name: Validate JSON Schema
+        run: npx ajv-cli validate -s data/schema.json -d data/providers.json
+      - name: Check data integrity
+        run: node scripts/check-data.mjs
+      - name: Build
+        run: npm run build
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=ai-water-transparency --branch=main
