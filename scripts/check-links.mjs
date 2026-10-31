@@ -79,8 +79,9 @@ async function check(url) {
       if (s === 401 || s === 403) return last; // bot protection; retrying won't help
     } catch (e) {
       const code = e.cause?.code ?? e.name;
-      if (code === 'ENOTFOUND') return { result: 'broken', note: 'domain does not resolve (ENOTFOUND)' };
-      last = { result: 'unverified', note: code === 'TimeoutError' ? 'timed out' : `${code}: ${e.cause?.message ?? e.message}` };
+      // A dead domain is broken, but only if every attempt fails to resolve (DNS can hiccup).
+      if (code === 'ENOTFOUND') last = { result: 'broken', note: 'domain does not resolve (ENOTFOUND)' };
+      else last = { result: 'unverified', note: code === 'TimeoutError' ? 'timed out' : `${code}: ${e.cause?.message ?? e.message}` };
     }
     if (i < ATTEMPTS) await sleep(2000 * i);
   }
