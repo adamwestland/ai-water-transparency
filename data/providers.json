@@ -328,5 +328,170 @@
       }
     },
     "last_updated": "2026-10-30"
+  },
+  {
+    "id": "alibaba",
+    "name": "Alibaba (Qwen)",
+    "sustainability_report_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water consumption annually (17,464,161 m³ in FY2026, the year ended March 31, 2026, up from 13,479,552 m³ in FY2025). Reports an average WUE of 1.198 L/kWh for Alibaba Cloud's self-built data centers in FY2026: 0.205 for mainly air-cooled sites and 1.799 for mainly evaporative-cooled sites.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption (9,707,757 MWh in FY2026) and an average PUE of 1.187 for Alibaba Cloud's self-built data centers and 1.224 for its leased data centers in China. Reports clean electricity at 62.2% of the group's electricity mix.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Reports water and energy metrics as averages across self-built and leased data centers. Names individual sites (e.g., water reclaimed at bases including Ulanqab) but publishes no water or energy figures for individual facilities.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data for Qwen models or other AI workloads.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water replenishment, water positive or quantified water target published. The FY2026 report describes site-specific cooling choices and water-efficiency practices for its data centers.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+      }
+    },
+    "last_updated": "2026-10-31"
+  },
+  {
+    "id": "baidu",
+    "name": "Baidu (ERNIE)",
+    "sustainability_report_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water withdrawal (2,183,887.2 tons in 2025), discharge (636,410.9 tons) and consumption (1,547,476.4 tons), with 2023 and 2024 figures for comparison. Reports an average annual WUE of 1.65 for its self-built data centers in 2025.",
+        "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption (1,273,970.0 MWh in 2025) and an average annual PUE of 1.20 for its self-built data centers. Reports 106.16 million kWh of renewable energy consumption in 2025.",
+        "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Describes measures at named data centers (e.g., a wastewater reuse program at Yangquan that cut cooling-system water use by 20%) but publishes no water or energy figures for individual facilities.",
+        "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data for ERNIE models or other AI workloads.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "States a commitment to reduce water usage and says it sets annual WUE targets for its data centers, but publishes no quantified water target, replenishment or water positive pledge.",
+        "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+      }
+    },
+    "last_updated": "2026-10-31"
+  },
+  {
+    "id": "bytedance",
+    "name": "ByteDance (Doubao)",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No sustainability report or water usage data published as of October 2026.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "partial",
+        "detail": "Reports surpassing 42% carbon-free electricity globally and 98.6% across UK and EU operations in 2025, with a goal of 100% carbon-free electricity by 2030. Does not report total energy consumption or PUE.",
+        "source_url": "https://www.bytedance.com/en/newsroom/carbon-neutrality-2030"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Says some newer data centers, such as its Norwegian data center, run on 100% carbon-free electricity, but publishes no water or energy figures for individual facilities.",
+        "source_url": "https://www.bytedance.com/en/commitments"
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No per-model or per-query energy or water data published for Doubao or other AI models.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water-related sustainability commitments published. Its published climate goals cover carbon neutrality and carbon-free electricity by 2030.",
+        "source_url": "https://www.bytedance.com/en/newsroom/carbon-neutrality-2030"
+      }
+    },
+    "last_updated": "2026-10-31"
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "sustainability_report_url": null,
+    "disclosures": {
+      "water_usage": {
+        "status": "no",
+        "detail": "No sustainability report or water usage data published as of October 2026.",
+        "source_url": null
+      },
+      "energy_usage": {
+        "status": "no",
+        "detail": "No energy consumption data published.",
+        "source_url": null
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "No facility-level data published.",
+        "source_url": null
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No energy or water figures published for its models. The DeepSeek-V3 technical report gives training compute in GPU hours (2.788M H800 GPU hours) and an estimated rental cost, but no energy, emissions or water figures.",
+        "source_url": "https://arxiv.org/abs/2412.19437"
+      },
+      "water_pledge": {
+        "status": "no",
+        "detail": "No water-related sustainability commitments published.",
+        "source_url": null
+      }
+    },
+    "last_updated": "2026-10-31"
+  },
+  {
+    "id": "tencent",
+    "name": "Tencent (Hunyuan)",
+    "sustainability_report_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf",
+    "disclosures": {
+      "water_usage": {
+        "status": "yes",
+        "detail": "Reports total water consumption annually (12,151,404.1 tonnes in 2025, up from 10,370,588.3 tonnes in 2024) and states that its water comes from municipal supply. Reports a WUE of 1.50 L/kWh for its owned data centers in 2025.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+      },
+      "energy_usage": {
+        "status": "yes",
+        "detail": "Reports total energy consumption (8,715,193.3 MWh in 2025) and an average PUE of 1.246 for owned data centers. Reports green electricity at 48.5% of consumption in 2025.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+      },
+      "per_facility_reporting": {
+        "status": "no",
+        "detail": "Reports water and energy metrics in aggregate and as averages across owned data centers. No figures for individual facilities.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+      },
+      "ai_specific_data": {
+        "status": "no",
+        "detail": "No published water or energy data for Hunyuan models or other AI workloads.",
+        "source_url": null
+      },
+      "water_pledge": {
+        "status": "partial",
+        "detail": "Targets a 20% improvement in the WUE of its owned data centers by 2030 from a 2025 base year, and reports meeting a 2025 target to cut water use per employee in its owned Chinese Mainland office buildings by 15%. No water replenishment or water positive pledge.",
+        "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+      }
+    },
+    "last_updated": "2026-10-31"
   }
 ]
