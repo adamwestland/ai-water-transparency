@@ -61,7 +61,19 @@ jobs:
               gh issue create --title "$TITLE" --label link-check --body-file issue-body.md
             fi
           elif [ -n "$existing" ]; then
-            gh issue close "$existing" --reason completed --comment "All source links resolve again as of the [latest check]($RUN_URL)."
+            # Close only when every link the issue lists as broken now checks out OK. A link
+            # that moved to "could not verify" (bot wall, outage) keeps the issue open as is.
+            listed=$(gh issue view "$existing" --json body --jq .body | tr -d '\r' \
+              | awk '/^### /{s=($0=="### Broken")} s && /^\| https:/{print $2}')
+            pending=""
+            for url in $listed; do
+              grep -qF "| $url |" link-report.md && pending="$pending $url"
+            done
+            if [ -z "$pending" ]; then
+              gh issue close "$existing" --reason completed --comment "The links listed here all resolve again as of the [latest check]($RUN_URL)."
+            else
+              echo "Leaving #$existing open; still unverified:$pending"
+            fi
           fi
 
       - name: Fail the PR check on broken links
