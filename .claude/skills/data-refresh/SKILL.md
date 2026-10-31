@@ -10,7 +10,7 @@ Read `CLAUDE.md` first. Its sourcing rules apply to every step here, and `REVIEW
 ## Modes
 
 - **Change check** (most months): for each provider, look for a primary source published after its `last_updated` date (new annual report, data index, fact sheet, model card, SEC filing, official post with figures). Only edit providers with something new. Leave every other provider untouched, including its `last_updated`.
-- **Full re-verification** (January, April, July, October, or when asked): re-open the cited source for all 50 cells, confirm each status, figure and URL, check for newer sources, and set every provider's `last_updated` to today, so a `no` keeps meaning "we checked as of this date".
+- **Full re-verification** (January, April, July, October, or when asked): re-open the cited source for every cell, confirm each status, figure and URL, check for newer sources, and set every provider's `last_updated` to today, so a `no` keeps meaning "we checked as of this date".
 
 ## Where to look
 
@@ -25,6 +25,11 @@ Read `CLAUDE.md` first. Its sourcing rules apply to every step here, and `REVIEW
 | xAI | x.ai, Memphis-area utility and permitting filings | Irregular |
 | Mistral | mistral.ai news (lifecycle analysis) | Irregular |
 | Perplexity, Cohere | Company blog and research pages | Irregular |
+| Tencent | ESG Report PDF, also filed on HKEXnews (stock 00700) | April |
+| Alibaba | ESG Report PDF (fiscal year ends March 31), also filed on HKEXnews (stock 09988) | June |
+| Baidu | ESG Report PDF listed at esg.baidu.com/ESGReport (ir.baidu.com blocks automated reads) | May |
+| ByteDance | bytedance.com newsroom and commitments pages | Irregular |
+| DeepSeek | deepseek.com transparency page, model technical reports on arXiv and Hugging Face | Irregular |
 
 Also search for "<provider> sustainability report <year>", "<provider> water usage data center", and new SEC 10-K climate disclosures.
 
