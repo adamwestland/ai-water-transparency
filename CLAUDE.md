@@ -36,6 +36,7 @@ npm run build        # Production build (output: dist/)
 npm run preview      # Preview production build locally
 npm run validate     # Validate providers.json against schema
 npm run check-data   # Data-integrity checks; pass a base ref (e.g. -- origin/main) to check changed providers
+npm run check-links  # Check that every source URL still resolves (also runs weekly in CI)
 ```
 
 ## Tech Stack
@@ -45,7 +46,7 @@ npm run check-data   # Data-integrity checks; pass a base ref (e.g. -- origin/ma
 - MDX for methodology content
 - `data/providers.json` is imported at build time (fully static)
 - Cloudflare Pages hosts the `dist/` directory; `.github/workflows/deploy.yml` deploys on every push to `main`
-- GitHub Actions validates JSON schema, data integrity and the build on PR; Claude reviews PRs against `REVIEW.md` (advisory)
+- GitHub Actions validates JSON schema, data integrity and the build on PR; Claude reviews PRs against `REVIEW.md` (advisory); a weekly Link Check workflow flags dead source URLs
 
 ## Repo Structure
 
@@ -63,6 +64,7 @@ npm run check-data   # Data-integrity checks; pass a base ref (e.g. -- origin/ma
 - `CONTRIBUTING.md` -- How to submit updates (source URL required).
 - `REVIEW.md` -- Review policy for PRs (sourcing, neutrality, code).
 - `scripts/check-data.mjs` -- Data-integrity checks the schema can't express.
+- `scripts/check-links.mjs` -- Source link checker; `.github/workflows/link-check.yml` runs it weekly and opens a `link-check` issue for dead links.
 - `.claude/skills/data-refresh/` -- Procedure for the monthly data refresh.
 
 ## Updating the Dataset

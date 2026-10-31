@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { providers } from '../lib/providers';
 import type { DisclosureDimension } from '../lib/providers';
 import { DISCLOSURE_LABELS, DISCLOSURE_ORDER } from '../lib/disclosure-labels';
+import { datasetSchema } from '../lib/structured-data';
 
 const jsonString = JSON.stringify(providers, null, 2);
 const lastUpdated = providers.map((p) => p.last_updated).sort().reverse()[0];
@@ -14,7 +15,7 @@ const statusColor = (status: string) => {
 };
 ---
 
-<BaseLayout title="Data — AI Water Transparency Report" description="Full dataset of AI provider water transparency disclosures. Open data, CC BY 4.0.">
+<BaseLayout title="Data — AI Water Transparency Report" description="Full dataset of AI provider water transparency disclosures. Open data, CC BY 4.0." structuredData={[datasetSchema]}>
   <div class="max-w-prose mx-auto">
     <h1 class="font-heading font-semibold text-2xl mb-2">Data</h1>
     <p class="text-sm text-text-muted mb-6">

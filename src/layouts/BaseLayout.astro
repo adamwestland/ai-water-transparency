@@ -2,20 +2,28 @@
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { SITE_URL, websiteSchema } from '../lib/structured-data';
 
 interface Props {
   title?: string;
   description?: string;
+  /** Extra schema.org JSON-LD objects for this page; the WebSite object is always included. */
+  structuredData?: object[];
 }
 
 const {
   title = 'AI Water Transparency Report — waterlens',
   description = 'What do AI companies disclose about water usage? An open-source, sourced comparison.',
+  structuredData = [],
 } = Astro.props;
 
-const siteUrl = 'https://waterlens.ai';
-const ogImage = `${siteUrl}/og-image.png`;
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = `${SITE_URL}/og-image.png`;
+const ogImageAlt = 'waterlens: AI Water Transparency Report';
+const canonicalUrl = new URL(Astro.url.pathname, SITE_URL).href;
+
+// Escape "<" so data can never close the <script> tag early.
+const jsonLd = (data: object) => JSON.stringify(data).replace(/</g, '\\u003c');
+const schemas = [websiteSchema, ...structuredData];
 ---
 
 <!doctype html>
@@ -25,18 +33,27 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta name="theme-color" content="#f8f7f4" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="waterlens" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+    {schemas.map((schema) => <script type="application/ld+json" set:html={jsonLd(schema)} />)}
   </head>
   <body class="bg-bg-warm text-text-primary font-body">
     <SiteHeader />
