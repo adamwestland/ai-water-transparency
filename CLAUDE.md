@@ -53,6 +53,7 @@ npm run check-links  # Check that every source URL still resolves (also runs wee
 - `data/providers.json` -- The core dataset. Schema-validated via `data/schema.json`.
 - `data/schema.json` -- JSON Schema (draft 2020-12) for validation.
 - `data/CHANGELOG.md` -- Every dataset update: what changed, when, why, source link.
+- `data/history.json` -- Append-only log of every disclosure status change (schema: `data/history.schema.json`). Powers the /changes page.
 - `data/build-water-log.json` -- Water footprint of building this site.
 - `src/content/methodology.mdx` -- What we track, how we verify, source bibliography.
 - `src/lib/providers.ts` -- TypeScript types and typed data export.
@@ -73,8 +74,9 @@ When updating `data/providers.json`:
 1. Change the relevant field(s)
 2. Update or add `source_url` for every changed field
 3. Update `last_updated` to today's date (ISO format: YYYY-MM-DD)
-4. Add an entry to `data/CHANGELOG.md` with: date, what changed, source link
-5. Run `npm run validate` and `npm run check-data -- origin/main`
+4. If a status changed, append an entry to `data/history.json` (date = new `last_updated`, from, to, source_url, one-sentence note). Never edit existing entries.
+5. Add an entry to `data/CHANGELOG.md` with: date, what changed, source link
+6. Run `npm run validate` and `npm run check-data -- origin/main`
 
 ## Adding a New Provider
 
@@ -82,7 +84,8 @@ When updating `data/providers.json`:
 2. Set every disclosure dimension -- check their website, sustainability reports, SEC filings
 3. For each `yes` or `partial`, include a `source_url`
 4. For each `no`, the `last_updated` date serves as "we checked as of this date"
-5. Add a CHANGELOG entry
+5. Append one `data/history.json` entry per dimension with `"from": null`
+6. Add a CHANGELOG entry
 
 ## Conventions
 
