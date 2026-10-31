@@ -44,7 +44,7 @@ npm run check-data   # Data-integrity checks; pass a base ref (e.g. -- origin/ma
 - Tailwind CSS for styling
 - MDX for methodology content
 - `data/providers.json` is imported at build time (fully static)
-- Cloudflare Pages deploys the `dist/` directory
+- Cloudflare Pages hosts the `dist/` directory; `.github/workflows/deploy.yml` deploys on every push to `main`
 - GitHub Actions validates JSON schema, data integrity and the build on PR; Claude reviews PRs against `REVIEW.md` (advisory)
 
 ## Repo Structure

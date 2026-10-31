@@ -33,6 +33,7 @@ Known quirks: x.ai, openai.com and perplexity.ai often block automated reads. Us
 ## Steps
 
 1. Branch from the latest `main`.
+   Check that the live site is current: the "Last updated" date on https://waterlens.ai is the newest `last_updated` in `main`'s `data/providers.json`, and the Deploy workflow publishes it on every push to `main`. If the live date is older, the last Deploy run failed or never ran. Say so at the top of the PR (or your report, if there's no PR).
 2. Gather sources per the mode. For each candidate change, note the exact figure, the year it covers, its scope (company-wide vs. data centers, withdrawal vs. consumption), and the page or table it came from.
 3. Edit `data/providers.json`. Detail text is one or two factual present-tense sentences. No judgments, no comparisons between providers. When in doubt the status is `no`.
 4. **Independent verification.** Start a separate verifier subagent. Give it only the diff and the cited URLs, not your reasoning, and ask it to open each source and confirm or reject each changed status and figure. Drop or downgrade anything it can't confirm, and list it under "For review" in the PR body.
