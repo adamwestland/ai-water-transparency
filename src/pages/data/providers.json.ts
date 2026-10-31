@@ -1,7 +1,9 @@
-import providers from '../../../data/providers.json';
+import type { APIRoute } from 'astro';
+import providersData from '../../../data/providers.json';
 
-// Built from data/providers.json so the download always matches the site.
-export const GET = () =>
-  new Response(JSON.stringify(providers, null, 2) + '\n', {
+// Serves the dataset at /data/providers.json, generated from data/providers.json
+// at build time so the download can never drift from the published table.
+export const GET: APIRoute = () =>
+  new Response(JSON.stringify(providersData, null, 2) + '\n', {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });

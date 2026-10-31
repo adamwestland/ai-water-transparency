@@ -1,6 +1,8 @@
-import history from '../../../data/history.json';
+import type { APIRoute } from 'astro';
+import historyData from '../../../data/history.json';
 
-export const GET = () =>
-  new Response(JSON.stringify(history, null, 2) + '\n', {
+// Serves the status history at /data/history.json, generated from data/history.json at build time.
+export const GET: APIRoute = () =>
+  new Response(JSON.stringify(historyData, null, 2) + '\n', {
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
   });
