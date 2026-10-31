@@ -11,6 +11,7 @@ If this PR modifies any files in `data/`:
 - [ ] Source publication date is noted
 - [ ] `last_updated` date is set to today
 - [ ] CHANGELOG.md entry added with date, change description, and source
+- [ ] `data/history.json` entry appended for each status change
 
 ## Sources
 

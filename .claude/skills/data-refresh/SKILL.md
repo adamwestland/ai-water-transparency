@@ -37,11 +37,16 @@ Known quirks: x.ai, openai.com and perplexity.ai often block automated reads. Us
 2. Gather sources per the mode. For each candidate change, note the exact figure, the year it covers, its scope (company-wide vs. data centers, withdrawal vs. consumption), and the page or table it came from.
 3. Edit `data/providers.json`. Detail text is one or two factual present-tense sentences. No judgments, no comparisons between providers. When in doubt the status is `no`.
 4. **Independent verification.** Start a separate verifier subagent. Give it only the diff and the cited URLs, not your reasoning, and ask it to open each source and confirm or reject each changed status and figure. Drop or downgrade anything it can't confirm, and list it under "For review" in the PR body.
-5. Add a `data/CHANGELOG.md` entry under `## YYYY-MM-DD`: status changes first (provider, dimension, before and after, source link), then figure and source updates, then providers re-checked with no change.
-6. Update `src/content/methodology.mdx` if an example or bibliography entry now points at an outdated report.
-7. Run `npm run validate`, `npm run check-data -- origin/main`, and `npm run build`. Fix failures in the data, never by weakening a check.
-8. Push to your `claude/` branch and open a PR using `.github/PULL_REQUEST_TEMPLATE.md`. Title: "Data refresh YYYY-MM" (add "(full)" for a full re-verification). Include a before/after table of every status change, the figure updates, a "For review" list, and every source with its publication date.
-9. Watch the PR. Fix CI failures and answer review comments. Leave the merge to a human.
+5. For every status change, append an entry to the end of `data/history.json` (it powers the public Changes page at /changes):
+   ```json
+   { "date": "YYYY-MM-DD", "provider": "<id>", "dimension": "<dimension>", "from": "<old>", "to": "<new>", "source_url": "<url>", "note": "<one factual sentence>" }
+   ```
+   `date` is the provider's new `last_updated`, `from` is the status on `main`, `source_url` is the source for the new status (null only when the new status is `no`), and `note` says in one factual sentence what the source now publishes or no longer publishes. For a new provider, append one entry per dimension with `"from": null` and no `note`. Only append: never edit, reorder or remove existing entries. Figure and source updates with no status change don't get a history entry.
+6. Add a `data/CHANGELOG.md` entry under `## YYYY-MM-DD`: status changes first (provider, dimension, before and after, source link), then figure and source updates, then providers re-checked with no change.
+7. Update `src/content/methodology.mdx` if an example or bibliography entry now points at an outdated report.
+8. Run `npm run validate`, `npm run check-data -- origin/main`, and `npm run build`. Fix failures in the data, never by weakening a check. `check-data` fails if a status changed without a matching `data/history.json` entry.
+9. Push to your `claude/` branch and open a PR using `.github/PULL_REQUEST_TEMPLATE.md`. Title: "Data refresh YYYY-MM" (add "(full)" for a full re-verification). Include a before/after table of every status change (it should match the new `data/history.json` entries), the figure updates, a "For review" list, and every source with its publication date.
+10. Watch the PR. Fix CI failures and answer review comments. Leave the merge to a human.
 
 If nothing changed in a change check, don't open a PR. Report which sources you checked and the newest report date you found for each provider.
 

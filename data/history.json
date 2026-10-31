@@ -1,0 +1,438 @@
+[
+  {
+    "date": "2026-03-22",
+    "provider": "google",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "google",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "google",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "google",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "google",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.google/reports/google-2024-environmental-report/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "microsoft",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "microsoft",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "microsoft",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "microsoft",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "microsoft",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "amazon",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://sustainability.aboutamazon.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "amazon",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://sustainability.aboutamazon.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "amazon",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "amazon",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "amazon",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.aboutamazon.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "meta",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.fb.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "meta",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.fb.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "meta",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.fb.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "meta",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "meta",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://sustainability.fb.com/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "anthropic",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "anthropic",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "anthropic",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "anthropic",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "anthropic",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "perplexity",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "perplexity",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "perplexity",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "perplexity",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "perplexity",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "openai",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "openai",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "openai",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "openai",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www.datacenterdynamics.com/en/news/sam-altman-chatgpt-queries-consume-034-watt-hours-of-electricity-and-0000085-gallons-of-water/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "openai",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://openai.com/index/stargate-community/"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "xai",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "xai",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "xai",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "xai",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "xai",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www.governing.com/resilience/wastewater-will-cool-this-memphis-data-center"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "mistral",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "mistral",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "mistral",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "mistral",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai"
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "mistral",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "cohere",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "cohere",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "cohere",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "cohere",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-03-22",
+    "provider": "cohere",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-30",
+    "provider": "google",
+    "dimension": "per_facility_reporting",
+    "from": "partial",
+    "to": "yes",
+    "source_url": "https://sustainability.google/reports/google-2026-environmental-report/",
+    "note": "The 2026 Environmental Report publishes water withdrawal, discharge and consumption for each data center location, plus PUE per facility."
+  },
+  {
+    "date": "2026-10-30",
+    "provider": "amazon",
+    "dimension": "water_usage",
+    "from": "partial",
+    "to": "yes",
+    "source_url": "https://sustainability.aboutamazon.com/2025-aws-summary.pdf",
+    "note": "The 2025 AWS Summary reports total AWS data center water withdrawal and global WUE."
+  },
+  {
+    "date": "2026-10-30",
+    "provider": "amazon",
+    "dimension": "per_facility_reporting",
+    "from": "no",
+    "to": "partial",
+    "source_url": "https://sustainability.aboutamazon.com/aws-sustainability-fact-sheets/aws-fact-sheet-virginia.pdf",
+    "note": "AWS location fact sheets publish water withdrawal, PUE and WUE by location, not by facility."
+  },
+  {
+    "date": "2026-10-30",
+    "provider": "meta",
+    "dimension": "ai_specific_data",
+    "from": "no",
+    "to": "partial",
+    "source_url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
+    "note": "Llama model cards report training GPU hours, power and emissions; no water or inference data."
+  }
+]
