@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Water Transparency Status History",
+  "description": "Append-only log of every disclosure status a provider has had. One entry per status change; an entry with from = null records the status when the provider was first tracked.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["date", "provider", "dimension", "from", "to", "source_url"],
+    "properties": {
+      "date": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "ISO date of the dataset update that made this change (the provider's last_updated in that update)"
+      },
+      "provider": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "description": "Provider id from providers.json"
+      },
+      "dimension": {
+        "type": "string",
+        "enum": ["water_usage", "energy_usage", "per_facility_reporting", "ai_specific_data", "water_pledge"]
+      },
+      "from": {
+        "oneOf": [
+          { "type": "string", "enum": ["yes", "no", "partial"] },
+          { "type": "null" }
+        ],
+        "description": "Previous status, or null when the provider was first tracked"
+      },
+      "to": {
+        "type": "string",
+        "enum": ["yes", "no", "partial"],
+        "description": "New status"
+      },
+      "source_url": {
+        "oneOf": [
+          { "type": "string", "pattern": "^https://" },
+          { "type": "null" }
+        ],
+        "description": "Source supporting the new status; required when the new status is yes or partial"
+      },
+      "note": {
+        "type": "string",
+        "minLength": 1,
+        "description": "One factual sentence on what changed in the published source; required for status changes"
+      }
+    },
+    "additionalProperties": false,
+    "allOf": [
+      {
+        "if": { "properties": { "to": { "enum": ["yes", "partial"] } } },
+        "then": { "properties": { "source_url": { "type": "string" } } }
+      },
+      {
+        "if": { "properties": { "from": { "type": "string" } } },
+        "then": { "required": ["note"] }
+      }
+    ]
+  }
+}

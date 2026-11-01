@@ -1,5 +1,9 @@
 # Data Changelog
 
+## 2026-10-31
+
+- Added `data/history.json`, a log of every disclosure status since each provider was first tracked, reconstructed from the git history of `data/providers.json`. No provider data changed. Statuses as first tracked use the sources cited on 2026-03-22; the four status changes from 2026-10-30 use the sources listed in that entry below.
+
 ## 2026-10-30
 
 Refreshed all 10 providers against reports published since March 2026. Every provider's `last_updated` is now 2026-10-30.

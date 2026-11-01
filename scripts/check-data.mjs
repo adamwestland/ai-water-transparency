@@ -3,13 +3,16 @@
 //
 // Usage: node scripts/check-data.mjs [base-ref]
 //   With a base ref (e.g. origin/main), also checks that changed providers
-//   bumped last_updated and are covered by a CHANGELOG entry.
+//   bumped last_updated and are covered by a CHANGELOG entry, that each status
+//   change's history entry is dated with the provider's new last_updated, and
+//   that existing history entries were not edited or removed.
 
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const PROVIDERS = 'data/providers.json';
 const CHANGELOG = 'data/CHANGELOG.md';
+const HISTORY = 'data/history.json';
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 const errors = [];
@@ -48,6 +51,52 @@ for (const p of providers) {
   }
 }
 
+// --- Status history (data/history.json) ---
+// Replaying the history for each provider/dimension must end at its current
+// status, so a status change can't land without a history entry.
+
+const history = JSON.parse(readFileSync(HISTORY, 'utf8'));
+const byCell = new Map();
+history.forEach((e, i) => {
+  const where = `${HISTORY}[${i}] ${e.provider}.${e.dimension}`;
+  if (!isValidDate(e.date)) fail(`${where}: date "${e.date}" is not a real date`);
+  else if (e.date > tomorrow) fail(`${where}: date ${e.date} is in the future`);
+  if (e.from === e.to) fail(`${where}: from and to are both "${e.to}"`);
+  if (e.source_url && !e.source_url.startsWith('https://')) fail(`${where}: source_url must be HTTPS`);
+  const key = `${e.provider}.${e.dimension}`;
+  if (!byCell.has(key)) byCell.set(key, []);
+  byCell.get(key).push({ ...e, where });
+});
+
+for (const [key, entries] of byCell) {
+  entries.forEach((e, i) => {
+    const prev = entries[i - 1];
+    if (!prev && e.from !== null) fail(`${e.where}: first entry for ${key} must have from: null`);
+    if (prev && e.from === null) fail(`${e.where}: only the first entry for ${key} may have from: null`);
+    if (prev && e.from !== null && e.from !== prev.to) {
+      fail(`${e.where}: from "${e.from}" doesn't match the previous entry's to "${prev.to}"`);
+    }
+    if (prev && e.date < prev.date) fail(`${e.where}: entries for ${key} are out of date order`);
+  });
+}
+
+for (const p of providers) {
+  for (const [dim, item] of Object.entries(p.disclosures)) {
+    const entries = byCell.get(`${p.id}.${dim}`);
+    if (!entries) {
+      fail(`${p.id}.${dim}: no entry in ${HISTORY} (add one with from: null for a new provider)`);
+      continue;
+    }
+    const last = entries[entries.length - 1];
+    if (last.to !== item.status) {
+      fail(`${p.id}.${dim}: status is "${item.status}" but ${HISTORY} ends at "${last.to}"; add an entry for the change`);
+    }
+    if (last.date > p.last_updated) {
+      fail(`${p.id}.${dim}: ${HISTORY} entry dated ${last.date} is after last_updated ${p.last_updated}`);
+    }
+  }
+}
+
 // --- Checks against the base branch ---
 
 const baseRef = process.argv[2];
@@ -81,6 +130,16 @@ if (baseRef) {
       if (!contentChanged && newDate === oldDate) continue;
     }
 
+    // Each changed status needs a history entry dated with this update.
+    for (const dim of Object.keys(p.disclosures)) {
+      if (old && p.disclosures[dim].status === old.disclosures[dim]?.status) continue;
+      const entries = byCell.get(`${p.id}.${dim}`) || [];
+      const last = entries[entries.length - 1];
+      if (last && last.date !== newDate) {
+        fail(`${p.id}.${dim}: status changed but the latest ${HISTORY} entry is dated ${last.date}, not ${newDate}`);
+      }
+    }
+
     const section = sectionsFor(newDate);
     if (!section) {
       fail(`${p.id}: no "## ${newDate}" entry in ${CHANGELOG}`);
@@ -96,6 +155,19 @@ if (baseRef) {
       fail(`${p.id}: status changed but the ${newDate} CHANGELOG entry doesn't mention ${shortName(p)}`);
     }
   }
+
+  // History is append-only: entries already on the base branch stay as they are.
+  let baseHistory = [];
+  try {
+    baseHistory = JSON.parse(execFileSync('git', ['show', `${baseRef}:${HISTORY}`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }));
+  } catch {
+    // The base branch predates history.json.
+  }
+  baseHistory.forEach((e, i) => {
+    if (JSON.stringify(history[i]) !== JSON.stringify(e)) {
+      fail(`${HISTORY}[${i}]: existing entry was edited, removed or reordered; append new entries at the end`);
+    }
+  });
 
   for (const id of baseById.keys()) {
     if (!seen.has(id) && !changelog.toLowerCase().includes(id)) {

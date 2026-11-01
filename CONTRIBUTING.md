@@ -14,8 +14,13 @@ If a provider has published new data (a new sustainability report, an SEC filing
    ## YYYY-MM-DD
    - Updated [provider]: [what changed]. Source: [URL]
    ```
-5. Run `npm run validate` to check the JSON schema before submitting
-6. Open a pull request
+5. If a disclosure status changed (for example `no` to `partial`), append an entry to the end of `data/history.json`:
+   ```json
+   { "date": "YYYY-MM-DD", "provider": "<id>", "dimension": "<dimension>", "from": "<old>", "to": "<new>", "source_url": "<url>", "note": "<one factual sentence>" }
+   ```
+   Use the new `last_updated` as the date. Don't edit existing entries; history is append-only.
+6. Run `npm run validate` and `npm run check-data -- origin/main` before submitting
+7. Open a pull request
 
 ## How to Add a New Provider
 
@@ -24,9 +29,10 @@ If a provider has published new data (a new sustainability report, an SEC filing
 3. Set every disclosure dimension:
    - For each `yes` or `partial`: include a `source_url` linking to the published document
    - For each `no`: the `last_updated` date serves as "we checked as of this date"
-4. Add a CHANGELOG entry
-5. Run `npm run validate`
-6. Open a pull request
+4. Append one entry per dimension to `data/history.json` with `"from": null` (no `note` needed)
+5. Add a CHANGELOG entry
+6. Run `npm run validate` and `npm run check-data -- origin/main`
+7. Open a pull request
 
 ## Source Requirements
 

@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DisclosureBadge from '../components/DisclosureBadge.astro';
+import { providers } from '../lib/providers';
+import { DISCLOSURE_LABELS, DISCLOSURE_ORDER } from '../lib/disclosure-labels';
+import { history, statusChanges, changesFor, firstTracked, groupByDate } from '../lib/history';
+
+const nameOf = new Map(providers.map((p) => [p.id, p.name]));
+const providerName = (id: string) => nameOf.get(id) ?? id;
+
+// Timeline: status changes plus the dates providers were first tracked, newest first.
+const dates = [...new Set(history.map((e) => e.date))].sort().reverse();
+const timeline = dates.map((date) => ({
+  date,
+  changes: groupByDate(statusChanges).find((g) => g.date === date)?.entries ?? [],
+  added: [...new Set(history.filter((e) => e.date === date && e.from === null).map((e) => e.provider))],
+}));
+
+const initialStatus = (providerId: string, dim: string) =>
+  history.find((e) => e.provider === providerId && e.dimension === dim && e.from === null)?.to;
+
+const changelogUrl = 'https://github.com/adamwestland/ai-water-transparency/blob/main/data/CHANGELOG.md';
+---
+
+<BaseLayout title="Changes — AI Water Transparency Report" description="Every change in an AI provider's water and energy disclosure status, with the date and source.">
+  <div class="max-w-prose mx-auto">
+    <h1 class="font-heading font-semibold text-2xl mb-2">Changes</h1>
+    <p class="text-sm text-text-muted leading-relaxed mb-3">
+      Every change in a provider's disclosure status is logged here with the date of the update and the
+      source that supports the new status. Updates to figures or sources that don't change a status are in the{' '}
+      <a href={changelogUrl} class="underline hover:text-text-primary" target="_blank" rel="noopener">full changelog</a>.
+    </p>
+    <p class="text-sm mb-8">
+      <a href="/data/history.json" download="history.json" class="text-sm px-3 py-1.5 border border-border-subtle rounded hover:bg-bg-card no-underline text-text-primary inline-block">
+        Download history JSON
+      </a>
+    </p>
+
+    <h2 class="font-body font-semibold text-lg mb-4">Timeline</h2>
+    <ol class="mb-12 space-y-6">
+      {timeline.map((group) => (
+        <li>
+          <h3 class="text-xs font-medium text-text-faint uppercase tracking-wider mb-2">
+            <time datetime={group.date}>{group.date}</time>
+          </h3>
+          <ul class="space-y-3">
+            {group.changes.map((e) => (
+              <li class="text-sm">
+                <p class="text-text-primary">
+                  <a href={`#${e.provider}`} class="font-semibold no-underline hover:underline">{providerName(e.provider)}</a>
+                  {' · '}{DISCLOSURE_LABELS[e.dimension]}:{' '}
+                  <DisclosureBadge status={e.from!} /> <span class="text-text-faint" aria-label="changed to">&rarr;</span> <DisclosureBadge status={e.to} />
+                </p>
+                {e.note && <p class="text-text-muted">{e.note}</p>}
+                {e.source_url && (
+                  <a href={e.source_url} class="text-xs underline hover:text-text-primary" style="color: #2d6a9f;" target="_blank" rel="noopener">
+                    View source &rarr;
+                  </a>
+                )}
+              </li>
+            ))}
+            {group.added.length > 0 && (
+              <li class="text-sm text-text-muted">
+                Started tracking {group.added.map(providerName).join(', ')}.
+              </li>
+            )}
+          </ul>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="font-body font-semibold text-lg mb-4">By provider</h2>
+    {providers.map((provider) => {
+      const changes = changesFor(provider.id);
+      const since = firstTracked(provider.id);
+      return (
+        <section id={provider.id} class="mb-8 pb-8 border-b border-border-subtle last:border-b-0 scroll-mt-4">
+          <h3 class="font-body font-semibold text-base">{provider.name}</h3>
+          <p class="text-xs text-text-faint mt-0.5 mb-3">
+            First tracked {since} &middot; Last checked {provider.last_updated}
+          </p>
+
+          <table class="w-full table-fixed text-sm mb-3">
+            <thead>
+              <tr class="text-xs text-text-faint uppercase tracking-wider">
+                <th class="text-left font-medium py-1 pr-4 w-1/2">Dimension</th>
+                <th class="text-left font-medium py-1 pr-4">First tracked</th>
+                <th class="text-left font-medium py-1">Now</th>
+              </tr>
+            </thead>
+            <tbody>
+              {DISCLOSURE_ORDER.map((dim) => {
+                const first = initialStatus(provider.id, dim);
+                return (
+                  <tr>
+                    <td class="py-1 pr-4 text-text-primary">{DISCLOSURE_LABELS[dim]}</td>
+                    <td class="py-1 pr-4">{first ? <DisclosureBadge status={first} /> : <span class="text-text-faint">—</span>}</td>
+                    <td class="py-1"><DisclosureBadge status={provider.disclosures[dim].status} /></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          {changes.length === 0 ? (
+            <p class="text-sm text-text-muted">No status changes since {since}.</p>
+          ) : (
+            <ul class="space-y-2">
+              {changes.map((e) => (
+                <li class="text-sm">
+                  <p class="text-text-primary">
+                    <time datetime={e.date} class="text-text-faint">{e.date}</time>
+                    {' · '}{DISCLOSURE_LABELS[e.dimension]}:{' '}
+                    <DisclosureBadge status={e.from!} /> <span class="text-text-faint" aria-label="changed to">&rarr;</span> <DisclosureBadge status={e.to} />
+                  </p>
+                  {e.note && <p class="text-text-muted">{e.note}</p>}
+                  {e.source_url && (
+                    <a href={e.source_url} class="text-xs underline hover:text-text-primary" style="color: #2d6a9f;" target="_blank" rel="noopener">
+                      View source &rarr;
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      );
+    })}
+  </div>
+</BaseLayout>

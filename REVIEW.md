@@ -11,6 +11,7 @@ For every changed status, detail, or figure:
 - A status was not upgraded (`no` to `partial`, `partial` to `yes`) without evidence in the source. When in doubt, the status is `no`.
 - `yes` or `partial` has a source; `no` has a `last_updated` date that reflects the check.
 - `data/CHANGELOG.md` has an entry for the change with a source link.
+- Each status change has a `data/history.json` entry whose note is factual and whose source supports the new status. Existing history entries are unchanged (CI enforces this).
 
 ## Pass 2: Neutrality
 

@@ -65,5 +65,8 @@ const barColor = {
     })}
   </div>
 
-  <p class="text-xs text-text-faint mt-3">Updated {provider.last_updated}</p>
+  <p class="text-xs text-text-faint mt-3">
+    Updated {provider.last_updated} &middot;
+    <a href={`/changes#${provider.id}`} class="underline hover:text-text-primary">Status history</a>
+  </p>
 </article>
