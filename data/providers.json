@@ -369,7 +369,7 @@
     "disclosures": {
       "water_usage": {
         "status": "yes",
-        "detail": "Reports total water withdrawal (2,183,887.2 tons in 2025), discharge (636,410.9 tons) and consumption (1,547,476.4 tons), with 2023 and 2024 figures for comparison. Reports an average annual WUE of 1.65 for its self-built data centers in 2025.",
+        "detail": "Reports total water withdrawal (2,183,887.2 tons in 2025), discharge (636,410.9 tons) and consumption (1,547,476.4 tons), with 2023 and 2024 figures for comparison. Reports an average annual WUE of 1.65 for its self-built data centers in 2025 (the report gives no unit).",
         "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
       },
       "energy_usage": {

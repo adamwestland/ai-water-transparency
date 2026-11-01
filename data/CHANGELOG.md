@@ -2,8 +2,6 @@
 
 ## 2026-10-31
 
-- Added `data/history.json`, a log of every disclosure status since each provider was first tracked, reconstructed from the git history of `data/providers.json`. No provider data changed. Statuses as first tracked use the sources cited on 2026-03-22; the four status changes from 2026-10-30 use the sources listed in that entry below.
-
 Added 5 providers: Alibaba, Baidu, ByteDance, DeepSeek and Tencent. Dataset now covers 15 providers.
 
 - Alibaba (Qwen): water usage yes, energy usage yes, per-facility no, AI-specific no, water pledge no. FY2026 water consumption 17,464,161 m³, self-built data center WUE 1.198 L/kWh, energy 9,707,757 MWh, self-built PUE 1.187 — [2026 ESG Report](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf) (filed 2026-06-18)
@@ -11,6 +9,10 @@ Added 5 providers: Alibaba, Baidu, ByteDance, DeepSeek and Tencent. Dataset now 
 - ByteDance (Doubao): energy usage partial (carbon-free electricity share only, no totals or PUE); all other dimensions no. No sustainability report found — [carbon neutrality update](https://www.bytedance.com/en/newsroom/carbon-neutrality-2030) (updated August 2026), [commitments](https://www.bytedance.com/en/commitments)
 - DeepSeek: no on all five dimensions. The DeepSeek-V3 technical report gives training compute in GPU hours but no energy, emissions or water figures — [arXiv:2412.19437](https://arxiv.org/abs/2412.19437)
 - Tencent (Hunyuan): water usage yes, energy usage yes, per-facility no, AI-specific no, water pledge partial (20% data center WUE improvement by 2030, no replenishment pledge). 2025 water consumption 12,151,404.1 tonnes, owned data center WUE 1.50 L/kWh, energy 8,715,193.3 MWh, PUE 1.246 — [2025 ESG Report](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf) (filed 2026-04-09)
+
+Separately, the change history was added the same day:
+
+- Added `data/history.json`, a log of every disclosure status since each provider was first tracked, reconstructed from the git history of `data/providers.json`. No provider data changed. Statuses as first tracked use the sources cited on 2026-03-22; the four status changes from 2026-10-30 use the sources listed in that entry below.
 
 ## 2026-10-30
 
