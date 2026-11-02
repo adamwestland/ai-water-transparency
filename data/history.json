@@ -434,5 +434,205 @@
     "to": "partial",
     "source_url": "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
     "note": "Llama model cards report training GPU hours, power and emissions; no water or inference data."
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "alibaba",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "alibaba",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "alibaba",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "alibaba",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "alibaba",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800880.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "baidu",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "baidu",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "baidu",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "baidu",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "baidu",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": "https://esgs.cdn.bcebos.com/2026/05/17/05/080532d06118abd0b715365f9ae46689.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "bytedance",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "bytedance",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www.bytedance.com/en/newsroom/carbon-neutrality-2030"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "bytedance",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": "https://www.bytedance.com/en/commitments"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "bytedance",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "bytedance",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": "https://www.bytedance.com/en/newsroom/carbon-neutrality-2030"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "deepseek",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "deepseek",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "deepseek",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "deepseek",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": "https://arxiv.org/abs/2412.19437"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "deepseek",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "tencent",
+    "dimension": "water_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "tencent",
+    "dimension": "energy_usage",
+    "from": null,
+    "to": "yes",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "tencent",
+    "dimension": "per_facility_reporting",
+    "from": null,
+    "to": "no",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "tencent",
+    "dimension": "ai_specific_data",
+    "from": null,
+    "to": "no",
+    "source_url": null
+  },
+  {
+    "date": "2026-10-31",
+    "provider": "tencent",
+    "dimension": "water_pledge",
+    "from": null,
+    "to": "partial",
+    "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901285.pdf"
   }
 ]
