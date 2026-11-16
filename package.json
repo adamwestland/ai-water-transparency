@@ -19,7 +19,7 @@
     "@fontsource/ibm-plex-sans": "^5.2.8",
     "@fontsource/sora": "^5.2.8",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "7.4.2",
+    "astro": "7.4.12",
     "tailwindcss": "^4.2.2",
     "vite": "7.3.7"
   },
